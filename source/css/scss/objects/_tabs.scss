@@ -1,0 +1,52 @@
+.tabs {
+	overflow: hidden;
+
+	ul {
+		display: table;
+		width: 100%;
+
+		&.tab-list {
+			width: 70%;
+			float: right;
+			@include break;
+		}
+
+		&.subnav {
+			background: $wf-gray-med;
+			padding: 2% 0;
+
+			li {
+				border-right: 0;
+				a {
+					background: inherit;
+					padding: $pad;
+				}
+			}
+		}
+	}
+	
+	li {
+		display: table-cell;
+		text-align: center;
+		border-right: 4px solid $wf-gray-dark;
+
+		&:last-child {
+			border-right: 0;
+		}
+	}
+
+	a {
+		display: block;
+		padding: $pad-half;
+		background: $wf-gray-light;
+
+		&:hover, &:focus {
+			background: $wf-gray-med-dark;
+		}
+
+		&.active {
+			background: $wf-gray-med;
+			color: $white;
+		}
+	}
+}

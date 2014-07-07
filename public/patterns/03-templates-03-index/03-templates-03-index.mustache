@@ -1,0 +1,21 @@
+{{&gt; organisms-header }}
+&lt;div class=&quot;page&quot; id=&quot;page&quot;&gt;
+  
+  &lt;div role=&quot;main&quot;&gt;
+    
+      {{# emergency }}
+      {{&gt; molecules-alert:error }}
+      {{/ emergency }}
+
+      {{# hero }}
+        &lt;nav class=&quot;hero-nav-primary&quot;&gt;
+          {{&gt; molecules-hero-nav-primary }}
+        &lt;/nav&gt;
+        &lt;nav class=&quot;hero-nav-secondary&quot;&gt;
+         {{&gt; molecules-hero-nav-secondary }}
+        &lt;/nav&gt;
+      {{/ hero}}
+
+  &lt;/div&gt;&lt;!--End role=main--&gt;
+  {{&gt; organisms-footer }}
+&lt;/div&gt;
