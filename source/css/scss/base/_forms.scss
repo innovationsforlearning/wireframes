@@ -109,3 +109,19 @@ input[type="search"]::-webkit-search-decoration {
 	border-left: 1px solid $gray;
 	color: $gray;
 }
+
+#feedback .main {
+	@include container($container);
+}
+
+.feedback-block {
+	@include span(6 of 12);
+	@include squish(3 of 12);
+	padding: 5% 0;
+	h1 {
+		padding-bottom: 5%;
+	}
+	h2 {
+		padding-bottom: 2%; 
+	}
+}

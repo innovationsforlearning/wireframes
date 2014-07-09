@@ -156,6 +156,18 @@
 	}
 }
 
+.hero-nav-primary, .hero-nav-secondary {
+	padding: 3% 0;
+}
+
+.hero-nav-primary {
+	@include container($container);
+}
+
+.hero-nav-secondary {
+	background: $wf-gray-light;
+}
+
 
 
 

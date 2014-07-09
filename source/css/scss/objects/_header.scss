@@ -2,14 +2,14 @@
 	background: $wf-gray-dark;
 	padding: 0;
 	border-bottom: 1px solid #dbdbdb;
-	@extend .lc;
+	@include container($susy);
 	
 }
 
 .logo {
 	float: left;
 	max-width: 9rem;
-	margin: 0.8rem;
+	margin: 0.8rem 0.8rem 0.8rem 0;
 	white-space: nowrap;
 	color: $white;
 	@extend %font-smoothed;

@@ -69,6 +69,12 @@ So feel free to use any of these approaches. Or don't. It's totally up to you.
 @import url(https://fontastic.s3.amazonaws.com/mA3qokRMxurgmKcNgKXBVV/icons.css);
 
 
+/*------------------------------------*\
+    $LAYOUT
+\*------------------------------------*/
+@import "scss/generic/grid";
+@import "scss/objects/layout";
+
 
 /*------------------------------------*\
     $GLOBAL ELEMENTS
@@ -84,15 +90,9 @@ So feel free to use any of these approaches. Or don't. It's totally up to you.
 @import "scss/base/tables";
 @import "scss/base/animation";
 
-
-
-
-
 /*------------------------------------*\
-    $LAYOUT
+    $jQUERY SPECIFIC
 \*------------------------------------*/
-@import "scss/generic/grid";
-@import "scss/objects/layout";
 
 
 /*------------------------------------*\
@@ -126,5 +126,6 @@ So feel free to use any of these approaches. Or don't. It's totally up to you.
 @import "scss/objects/comments";
 @import "scss/objects/messaging";
 @import "scss/objects/plaques";
+@import "scss/objects/modal";
 
 

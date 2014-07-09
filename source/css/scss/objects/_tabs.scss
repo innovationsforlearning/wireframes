@@ -1,52 +1,150 @@
+
+.tab-container {
+  @include container($container);
+  @include break;
+}
+
 .tabs {
-	overflow: hidden;
+  @include container($container);
+  margin-top: -2%;
+  float: right;
+  width: 70%;
+  display: table;
 
-	ul {
-		display: table;
-		width: 100%;
+  li {
+    border-right: 4px solid $wf-gray-dark;
+    display: table-cell;
+    text-align: center;
 
-		&.tab-list {
-			width: 70%;
-			float: right;
-			@include break;
-		}
+    
+  }
 
-		&.subnav {
-			background: $wf-gray-med;
-			padding: 2% 0;
+  a {
+    background: $wf-gray-light;
+    display: block;
+    padding: $pad-half;
+    @include border-radius(15px 15px 0 0);
 
-			li {
-				border-right: 0;
-				a {
-					background: inherit;
-					padding: $pad;
-				}
-			}
-		}
-	}
-	
-	li {
-		display: table-cell;
-		text-align: center;
-		border-right: 4px solid $wf-gray-dark;
+    &:hover, 
+    &:focus {
+      background: $wf-gray-med-dark;
+    }
 
-		&:last-child {
-			border-right: 0;
-		}
-	}
+    &.active {
+      background: $wf-gray-med;
+      color: $white;
+      display: block;
+    }
+  }
+}
 
-	a {
-		display: block;
-		padding: $pad-half;
-		background: $wf-gray-light;
+.tab-submenu {
+  background: $wf-gray-med;
+}
 
-		&:hover, &:focus {
-			background: $wf-gray-med-dark;
-		}
+.tab-submenu-list {
+   
+  display: none;
 
-		&.active {
-			background: $wf-gray-med;
-			color: $white;
-		}
-	}
+  &.active {
+    @include container($container);
+    @include break;  
+    display: block;
+  }
+
+  li {
+    border-right: 0;
+    display: table-cell;
+    text-align: center;
+
+    &:last-child {
+      border-right: 0;
+    }
+
+    a {
+      display: block;
+      background: inherit;
+      padding: $pad;
+    }
+  }
+}
+
+.tabs, .tab-submenu-list {
+    font-family: $font-secondary;
+}
+
+
+.sub-tabs {
+  background: $wf-gray-med;
+}
+
+// .tab-submenu-list {
+//   display: none; 
+
+//   &.active {
+//     display: block;
+//     @include container($container);
+//   }
+// }
+
+.tab-menu-link:active {
+  position: relative;
+  padding: 1em .5em;
+  &:before,
+  &:after {
+    content:"";
+    display:block;
+    width:1em; /* Must match our magic number... */
+    height:1em; /* ...our notch will end up being half this size. We define it in ems to scale it up with the text size. */
+    position:absolute;
+    bottom:0;
+    left:50%;
+    margin-left:-.5em; /* Half of our magic number. */
+  }
+  &:before {
+    background: $wf-gray-light;
+  }
+  &:after {
+    width:0;
+    height:0;
+    border:.5em solid $wf-gray-med; /* Half of our magic number and same colours as our nav’s background. */
+    border-bottom-color:transparent;
+  }
+}
+
+.sub-tab-content {
+  @include container($container);
+  background: $wf-gray-light;
+  display: none;
+  overflow: auto;
+  padding: 1% 0;
+
+  &.active {
+    display: block;
+  }
+
+  ul {
+
+    li {
+      @include gallery(2 of 12);
+      padding-top: 2%;
+    }
+  }
+}
+
+
+
+.onset-block {
+  @include span(4 of 12);
+  ul li {
+    @include gallery(4 of 12);
+  }
+} 
+
+.rimes-block {
+  @include span(8 of 12);
+  ul li {
+    @include gallery(2 of 12)
+  }
+
 }

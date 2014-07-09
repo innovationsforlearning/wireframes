@@ -7,7 +7,6 @@
 	background: $wf-gray-dark;
 	color: $white;
 	line-height: 1.2;
-	@extend .lc;
 	a {
 		color: $gray-light;
 	}
@@ -16,7 +15,8 @@
 //Footer Nav
 
 .footer-title {
-	display: inline-block;
+	display: block;
+	margin: 1% 0;
 }
 
 .nav-footer {
@@ -38,7 +38,20 @@
 }
 
 .copyright {
+
 	@media all and (min-width: $bp-med) {
-		float: right;
+		text-align: center;
 	}
+}
+
+.footer-bar {
+	@include break;
+	background: $wf-gray-dark;
+	font-family: $font-secondary;
+	height: 30px;
+	padding: 1% 0;
+}
+
+.footer-sub-tabs {
+	background: $wf-gray-light;
 }

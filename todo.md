@@ -1,0 +1,6 @@
+- take out 'subtab notch' and put in its own organism
+- figure out how to start on first screen of each tab (there are a lot of f'ing tabs)
+- remove one version of box-sizing: border-box
+- remove one version of clearfix
+- move footer jQuery into its own file
+- refactor padding on headings

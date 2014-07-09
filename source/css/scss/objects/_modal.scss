@@ -1,0 +1,54 @@
+// LEAN MODAL CSS
+
+#lean_overlay {
+    position: fixed;
+    z-index:100;
+    top: 0px;
+    left: 0px;
+    height:100%;
+    width:100%;
+    background: #000;
+    display: none;
+}
+
+// -------------------
+
+.modal {
+  position:absolute;
+  background:url(tint20.png) 0 0 repeat;
+  background:rgba(0,0,0,0.2);
+  border-radius:14px;
+  max-width: 400px;
+  @include box-shadow(3px 2px 5px 0px rgba(50, 50, 50, 0.75));
+  header {
+    background: $wf-gray-dark;
+    padding: 2%;
+    position: relative;
+  }
+  h1 {
+    color: $white;
+    text-align: center;
+
+  }
+  section {
+    padding: 5% 10%;
+    background: $white;
+    p {
+      text-align: center;
+    }
+  }
+}
+
+.modal-content {
+  background: $white;
+}
+
+.modal_close {
+  position:absolute;
+  color: $white;
+  width:14px;
+  height:14px;
+  display:block;
+  top:2px;
+  right:2px;
+}

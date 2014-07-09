@@ -5,8 +5,10 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width" />
 		
-		<link rel="stylesheet" href="../../css/style.css?1404430656" media="all" />
+		<link rel="stylesheet" href="../../css/style.css?1404949953" media="all" />
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<script src="../../js/jquery.leanModal.min.js"></script>
+		
 
 		<!-- Begin Pattern Lab (Required for Pattern Lab to run properly) -->
 				<!-- never cache patterns -->
@@ -16,30 +18,96 @@
 		<meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
 		<meta http-equiv="pragma" content="no-cache" />
 		
-		<link rel="stylesheet" href="../../styleguide/css/styleguide.css?1404430656" media="all">
-		<link rel="stylesheet" href="../../styleguide/css/styleguide-specific.css?1404430656" media="all" />
+		<link rel="stylesheet" href="../../styleguide/css/styleguide.css?1404949953" media="all">
+		<link rel="stylesheet" href="../../styleguide/css/styleguide-specific.css?1404949953" media="all" />
 		
 
 		<!-- End Pattern Lab -->
 	
 	</head>
 	<body class="body">	
-		<div class="tabs">
-	<ul class="tab-list">
-		<li><a href="#" id="ftc-1">SIGHT WORDS</a></li>
-		<li><a href="#" id="ftc-2">ONSETS & RHYMES</a></li>
-		<li><a href="#" id="ftc-3">TRAINING TUTORIALS</a></li>
+		<div class="tab-container">
+	<ul class="tabs">
+		<li><a href="#" class="tab-link active" data-tab="tab-1">SIGHT WORDS</a></li>
+		<li><a href="#" class="tab-link" data-tab="tab-2">ONSETS & RHYMES</a></li>
+		<li><a href="#" class="tab-link" data-tab="tab-3">TRAINING TUTORIALS</a></li>
 	</ul>
-
-  <ul class="subnav">
-        <li><a href="#">SET I</a></li>
-        <li><a href="#">SET II</a></li>
-        <li><a href="#">SET III</a></li>
-        <li><a href="#">SET IV</a></li>
-        <li><a href="#">SET V</a></li>
-        <li><a href="#">SET VI</a></li>
-      </ul>
 </div>
+
+<nav class="tab-submenu"> 
+  <ul class="tab-submenu-list active" id="tab-1"> 
+    <li><a href="#" class="tab-submenu-link active" data-tab="sub-tab-1">SET I</a></li> 
+    <li><a href="#" class="tab-submenu-link" data-tab="sub-tab-2">SET II</a></li>
+    <li><a href="#" class="tab-submenu-link" data-tab="sub-tab-3">SET III</a></li>
+    <li><a href="#" class="tab-submenu-link" data-tab="sub-tab-4">SET IV</a></li>
+    <li><a href="#" class="tab-submenu-link" data-tab="sub-tab-5">SET V</a></li>
+    <li><a href="#" class="tab-submenu-link" data-tab="sub-tab-6">SET VI</a></li>
+  </ul>
+
+  <ul class="tab-submenu-list" id="tab-2">
+    <li><a href="#" class="tab-submenu-link active" data-tab="sub-tab-7">POINT</a></li>
+    <li><a href="#" class="tab-submenu-link" data-tab="sub-tab-8">POINT II</a></li>
+    <li><a href="#" class="tab-submenu-link" data-tab="sub-tab-9">POINT III</a></li>
+    <li><a href="#" class="tab-submenu-link" data-tab="sub-tab-10">POINT IV</a></li>
+  </ul>
+
+  <ul class="tab-submenu-list" id="tab-3">
+    <li><a href="#">MATCH I</a></li>
+    <li><a href="#">MATCH II</a></li>
+    <li><a href="#">MATCH III</a></li>
+    <li><a href="#">MATCH IV</a></li>
+    <li><a href="#">MATCH V</a></li>
+    <li><a href="#">MATCH VI</a></li>
+  </ul>
+
+</nav>
+
+
+<script>
+$(function() {
+  var theTabs = $('.tab-link');
+  var theTabSubMenus = $('.tab-submenu-list')
+
+  $(theTabs).click(function(){
+    var theClickedTab = $(this);
+    var theClickedTabId = theClickedTab.attr('data-tab');  //.attr('data-tab');
+    selectTab(theClickedTab);
+    showSubNav(theClickedTabId);
+
+  });
+
+  function selectTab(tab){            
+    $(theTabs).removeClass('active');
+    // $('.tab-nav').removeClass('active');
+    $(tab).addClass('active');
+    // $('#'+tab_id).addClass('active');
+  }
+
+  function showSubNav(tab) {
+    $(theTabSubMenus).removeClass('active');
+    $('#' + tab).addClass('active');
+  }
+
+  function selectSubNavContent(tab) {
+
+  }
+  // function selectFirstSubTab() {
+  //   $('.sub-tab-content').removeClass('active');
+  //   $('.' + tab_id + '-tabs > div:first').addClass('active');
+  // }
+
+  $('.sub-tab-list a').click(function(){
+
+    var tab_id = $(this).attr('data-tab');    
+    $('.sub-tab-list a').removeClass('active');
+    $('.sub-tab-content').removeClass('active');
+    $(this).addClass('active');
+    $('#'+tab_id).addClass('active');
+    
+  });
+}); // end function
+</script>
+
 	<!--DO NOT REMOVE-->
 		
 	<script>
@@ -82,10 +150,10 @@
 			
 		}
 	</script>
-	<script id="pl-js-polyfill-insert-1404430656">
+	<script id="pl-js-polyfill-insert-1404949953">
 		(function() {
 			if (self != top) {
-				var cb = '1404430656';
+				var cb = '1404949953';
 				var js = [];
 				if (typeof document !== "undefined" && !("classList" in document.documentElement)) {
 					js.push("styleguide/js/vendor/classlist-polyfill.js");
@@ -94,10 +162,10 @@
 			}
 		})();
 	</script>
-	<script id="pl-js-insert-1404430656">
+	<script id="pl-js-insert-1404949953">
 		(function() {
 			if (self != top) {
-				var cb = '1404430656';
+				var cb = '1404949953';
 				var js = [ { "src": "styleguide/js/vendor/jwerty.js", "dep": [ "styleguide/js/postmessage.js", { "src": "data/annotations.js", "dep": [ "styleguide/js/annotations-pattern.js" ] }, "styleguide/js/code-pattern.js" ] } ];
 				scriptLoader.run(js,cb,'pl-js-insert');
 			}

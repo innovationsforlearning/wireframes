@@ -1,16 +1,82 @@
-&lt;div class=&quot;tabs&quot;&gt;
-	&lt;ul class=&quot;tab-list&quot;&gt;
-		&lt;li&gt;&lt;a href=&quot;{{ url }}&quot; id=&quot;ftc-1&quot;&gt;SIGHT WORDS&lt;/a&gt;&lt;/li&gt;
-		&lt;li&gt;&lt;a href=&quot;{{ url }}&quot; id=&quot;ftc-2&quot;&gt;ONSETS &amp; RHYMES&lt;/a&gt;&lt;/li&gt;
-		&lt;li&gt;&lt;a href=&quot;{{ url }}&quot; id=&quot;ftc-3&quot;&gt;TRAINING TUTORIALS&lt;/a&gt;&lt;/li&gt;
+&lt;div class=&quot;tab-container&quot;&gt;
+	&lt;ul class=&quot;tabs&quot;&gt;
+		&lt;li&gt;&lt;a href=&quot;{{ url }}&quot; class=&quot;tab-link active&quot; data-tab=&quot;tab-1&quot;&gt;SIGHT WORDS&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href=&quot;{{ url }}&quot; class=&quot;tab-link&quot; data-tab=&quot;tab-2&quot;&gt;ONSETS &amp; RHYMES&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href=&quot;{{ url }}&quot; class=&quot;tab-link&quot; data-tab=&quot;tab-3&quot;&gt;TRAINING TUTORIALS&lt;/a&gt;&lt;/li&gt;
 	&lt;/ul&gt;
-
-  &lt;ul class=&quot;subnav&quot;&gt;
-        &lt;li&gt;&lt;a href=&quot;{{ url }}&quot;&gt;SET I&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href=&quot;{{ url }}&quot;&gt;SET II&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href=&quot;{{ url }}&quot;&gt;SET III&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href=&quot;{{ url }}&quot;&gt;SET IV&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href=&quot;{{ url }}&quot;&gt;SET V&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href=&quot;{{ url }}&quot;&gt;SET VI&lt;/a&gt;&lt;/li&gt;
-      &lt;/ul&gt;
 &lt;/div&gt;
+
+&lt;nav class=&quot;tab-submenu&quot;&gt; 
+  &lt;ul class=&quot;tab-submenu-list active&quot; id=&quot;tab-1&quot;&gt; 
+    &lt;li&gt;&lt;a href=&quot;{{ url }}&quot; class=&quot;tab-submenu-link active&quot; data-tab=&quot;sub-tab-1&quot;&gt;SET I&lt;/a&gt;&lt;/li&gt; 
+    &lt;li&gt;&lt;a href=&quot;{{ url }}&quot; class=&quot;tab-submenu-link&quot; data-tab=&quot;sub-tab-2&quot;&gt;SET II&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;{{ url }}&quot; class=&quot;tab-submenu-link&quot; data-tab=&quot;sub-tab-3&quot;&gt;SET III&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;{{ url }}&quot; class=&quot;tab-submenu-link&quot; data-tab=&quot;sub-tab-4&quot;&gt;SET IV&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;{{ url }}&quot; class=&quot;tab-submenu-link&quot; data-tab=&quot;sub-tab-5&quot;&gt;SET V&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;{{ url }}&quot; class=&quot;tab-submenu-link&quot; data-tab=&quot;sub-tab-6&quot;&gt;SET VI&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+
+  &lt;ul class=&quot;tab-submenu-list&quot; id=&quot;tab-2&quot;&gt;
+    &lt;li&gt;&lt;a href=&quot;{{ url }}&quot; class=&quot;tab-submenu-link active&quot; data-tab=&quot;sub-tab-7&quot;&gt;POINT&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;{{ url }}&quot; class=&quot;tab-submenu-link&quot; data-tab=&quot;sub-tab-8&quot;&gt;POINT II&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;{{ url }}&quot; class=&quot;tab-submenu-link&quot; data-tab=&quot;sub-tab-9&quot;&gt;POINT III&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;{{ url }}&quot; class=&quot;tab-submenu-link&quot; data-tab=&quot;sub-tab-10&quot;&gt;POINT IV&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+
+  &lt;ul class=&quot;tab-submenu-list&quot; id=&quot;tab-3&quot;&gt;
+    &lt;li&gt;&lt;a href=&quot;{{ url }}&quot;&gt;MATCH I&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;{{ url }}&quot;&gt;MATCH II&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;{{ url }}&quot;&gt;MATCH III&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;{{ url }}&quot;&gt;MATCH IV&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;{{ url }}&quot;&gt;MATCH V&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;{{ url }}&quot;&gt;MATCH VI&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+
+&lt;/nav&gt;
+
+{{! move this: }}
+
+&lt;script&gt;
+$(function() {
+  var theTabs = $('.tab-link');
+  var theTabSubMenus = $('.tab-submenu-list')
+
+  $(theTabs).click(function(){
+    var theClickedTab = $(this);
+    var theClickedTabId = theClickedTab.attr('data-tab');  //.attr('data-tab');
+    selectTab(theClickedTab);
+    showSubNav(theClickedTabId);
+
+  });
+
+  function selectTab(tab){            
+    $(theTabs).removeClass('active');
+    // $('.tab-nav').removeClass('active');
+    $(tab).addClass('active');
+    // $('#'+tab_id).addClass('active');
+  }
+
+  function showSubNav(tab) {
+    $(theTabSubMenus).removeClass('active');
+    $('#' + tab).addClass('active');
+  }
+
+  function selectSubNavContent(tab) {
+
+  }
+  // function selectFirstSubTab() {
+  //   $('.sub-tab-content').removeClass('active');
+  //   $('.' + tab_id + '-tabs &gt; div:first').addClass('active');
+  // }
+
+  $('.sub-tab-list a').click(function(){
+
+    var tab_id = $(this).attr('data-tab');    
+    $('.sub-tab-list a').removeClass('active');
+    $('.sub-tab-content').removeClass('active');
+    $(this).addClass('active');
+    $('#'+tab_id).addClass('active');
+    
+  });
+}); // end function
+&lt;/script&gt;

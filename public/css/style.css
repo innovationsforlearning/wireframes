@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*                                                                                                                                         
                                                 ,,            ,,                          ,,                                             
  .M"""bgd mm                                    db          `7MM        mm         mm   `7MM                                    OO OO OO 
@@ -86,24 +87,500 @@ header, footer, nav, section, article, hgroup, figure {
 }
 
 /*------------------------------------*\
+    $LAYOUT
+\*------------------------------------*/
+/*------------------------------------*\
+    SUSY GRID
+\*------------------------------------*/
+/*------------------------------------*\
+IN USING THIS GRID 'TOOLKIT', the goal is to keep the HTML as semantic as possible, and use the Susy SASS mixins to do all the 'gridding'. The following name classes are just examples of what can be done (this CSS styles the 'gallery.mustache' file), but in the demo I've used easy to understand English class names to describe the concept. The grid map above ($susy) is the default grid, but can be adjusted on the fly by the Susy functions and mixins (http://susydocs.oddbird.net/en/latest/). 
+\*------------------------------------*/
+.container {
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: hidden;
+  *zoom: 1;
+}
+.container:after {
+  content: " ";
+  display: block;
+  clear: both;
+}
+head {
+  display: block;
+  position: fixed;
+  right: 10px;
+  top: 10px;
+  z-index: 999;
+  color: #333;
+  background: rgba(255, 255, 255, 0.25);
+}
+head:before {
+  content: "|||";
+  display: block;
+  padding: 5px 10px;
+  font-family: sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+}
+head:hover {
+  background: rgba(255, 255, 255, 0.5);
+  color: red;
+}
+head:hover ~ .container, head:hover ~ body .container {
+  position: relative;
+}
+head:hover ~ .container:before, head:hover ~ body .container:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  content: " ";
+  z-index: 998;
+  background-image: -moz-linear-gradient(left, #ffc0cb, #ffffff), -moz-linear-gradient(top, rgba(0, 0, 0, 0.5) 5%, rgba(0, 0, 0, 0) 5%);
+  background-image: -webkit-linear-gradient(left, #ffc0cb, #ffffff), -webkit-linear-gradient(top, rgba(0, 0, 0, 0.5) 5%, rgba(0, 0, 0, 0) 5%);
+  background-image: linear-gradient(to right, #ffc0cb, #ffffff), linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 5%, rgba(0, 0, 0, 0) 5%);
+  background-size: 8.33333%, 100% 24px;
+  background-origin: content-box, border-box;
+  background-clip: content-box, border-box;
+  background-position: left top;
+}
+
+.one.column {
+  clear: both;
+}
+.one.column > .column {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
+  float: left;
+  padding-left: 1.04167%;
+  padding-right: 1.04167%;
+}
+
+.two.columns {
+  clear: both;
+}
+.two.columns > .column {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 50%;
+  float: left;
+  padding-left: 1.04167%;
+  padding-right: 1.04167%;
+}
+
+.three.columns {
+  clear: both;
+}
+.three.columns > .column {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 33.33333%;
+  float: left;
+  padding-left: 1.04167%;
+  padding-right: 1.04167%;
+}
+
+.four.columns {
+  clear: both;
+}
+.four.columns > .column {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 25%;
+  float: left;
+  padding-left: 1.04167%;
+  padding-right: 1.04167%;
+}
+
+.five.columns {
+  clear: both;
+}
+.five.columns > .column {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 20%;
+  float: left;
+  padding-left: 1.04167%;
+  padding-right: 1.04167%;
+}
+
+.gallery > .column {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 50%;
+  float: left;
+  padding-left: 1.04167%;
+  padding-right: 1.04167%;
+}
+.gallery > .column:nth-child(2n + 1) {
+  margin-left: 0;
+  margin-right: -100%;
+  clear: both;
+}
+.gallery > .column:nth-child(2n + 2) {
+  margin-left: 50%;
+  margin-right: -100%;
+  clear: none;
+}
+@media (min-width: 46.8em) {
+  .gallery > .column {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 33.33333%;
+    float: left;
+    padding-left: 1.04167%;
+    padding-right: 1.04167%;
+  }
+  .gallery > .column:nth-child(3n + 1) {
+    margin-left: 0;
+    margin-right: -100%;
+    clear: both;
+  }
+  .gallery > .column:nth-child(3n + 2) {
+    margin-left: 33.33333%;
+    margin-right: -100%;
+    clear: none;
+  }
+  .gallery > .column:nth-child(3n + 3) {
+    margin-left: 66.66667%;
+    margin-right: -100%;
+    clear: none;
+  }
+}
+@media (min-width: 50em) {
+  .gallery > .column {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 25%;
+    float: left;
+    padding-left: 1.04167%;
+    padding-right: 1.04167%;
+  }
+  .gallery > .column:nth-child(4n + 1) {
+    margin-left: 0;
+    margin-right: -100%;
+    clear: both;
+  }
+  .gallery > .column:nth-child(4n + 2) {
+    margin-left: 25%;
+    margin-right: -100%;
+    clear: none;
+  }
+  .gallery > .column:nth-child(4n + 3) {
+    margin-left: 50%;
+    margin-right: -100%;
+    clear: none;
+  }
+  .gallery > .column:nth-child(4n + 4) {
+    margin-left: 75%;
+    margin-right: -100%;
+    clear: none;
+  }
+}
+
+.demo > .column {
+  background: #e0e0e0;
+  border: 1px solid #cccccc;
+  min-height: 50px;
+}
+.demo > .column:nth-of-type(2n) {
+  background: #cccccc;
+  border-color: #999999;
+}
+
+/*------------------------------------*\
+    $LAYOUT
+\*------------------------------------*/
+/* Layout Container */
+.lc {
+  max-width: 58.75em;
+  margin: 0 auto;
+  padding: 0.5em;
+}
+
+.main {
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.main:after {
+  content: " ";
+  display: block;
+  clear: both;
+}
+head:hover ~ .main, head:hover ~ body .main {
+  position: relative;
+}
+head:hover ~ .main:before, head:hover ~ body .main:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  content: " ";
+  z-index: 998;
+  background-image: -moz-linear-gradient(left, #ffc0cb, #ffffff), -moz-linear-gradient(top, rgba(0, 0, 0, 0.5) 5%, rgba(0, 0, 0, 0) 5%);
+  background-image: -webkit-linear-gradient(left, #ffc0cb, #ffffff), -webkit-linear-gradient(top, rgba(0, 0, 0, 0.5) 5%, rgba(0, 0, 0, 0) 5%);
+  background-image: linear-gradient(to right, #ffc0cb, #ffffff), linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 5%, rgba(0, 0, 0, 0) 5%);
+  background-size: 8.33333%, 100% 24px;
+  background-origin: content-box, border-box;
+  background-clip: content-box, border-box;
+  background-position: left top;
+}
+
+/*------------------------------------*\
+    $TEMPLATES
+\*------------------------------------*/
+/* Two Column Layout */
+@media all and (min-width: 50em) {
+  .l-two-col .l-main {
+    float: left;
+    width: 70%;
+    padding-right: 1em;
+  }
+}
+@media all and (max-width: 50em) {
+  .l-two-col .l-sidebar {
+    clear: both;
+  }
+}
+@media all and (min-width: 50em) {
+  .l-two-col .l-sidebar {
+    float: left;
+    width: 30%;
+    padding: 0 0 0 1em;
+  }
+}
+
+/*------------------------------------*\
+    $GRIDS
+\*------------------------------------*/
+/* Grid Container */
+.g {
+  overflow: hidden;
+  margin: 0 -0.5em;
+}
+
+/* Grid Item */
+.gi {
+  padding: 0.5em;
+}
+.gi img {
+  display: block;
+}
+@media all and (min-width: 46.8em) {
+  .gi {
+    float: left;
+  }
+}
+
+/* Grid 1up */
+.g-1up .gi {
+  width: 100%;
+}
+
+/* Grid 2up */
+@media all and (min-width: 46.8em) {
+  .g-2up > .gi {
+    float: left;
+    width: 50%;
+  }
+  .g-2up > .gi:nth-of-type(odd) {
+    clear: left;
+  }
+}
+
+/* Grid Half (Always displayed side by side) */
+.g-half > .gi {
+  float: left;
+  width: 50%;
+}
+.g-half > .gi:nth-of-type(odd) {
+  clear: left;
+}
+
+/* Grid 3up */
+@media all and (min-width: 46.8em) {
+  .g-3up > .gi {
+    float: left;
+    width: 50%;
+  }
+  .g-3up > .gi:nth-of-type(2n+1) {
+    clear: left;
+  }
+}
+@media all and (min-width: 50em) {
+  .g-3up > .gi {
+    width: 33.3333333%;
+  }
+  .g-3up > .gi:nth-of-type(2n+1) {
+    clear: none;
+  }
+  .g-3up > .gi:nth-of-type(3n+1) {
+    clear: left;
+  }
+}
+
+/* Grid 4up */
+@media all and (min-width: 46.8em) {
+  .g-4up > .gi {
+    float: left;
+    width: 50%;
+  }
+  .g-4up > .gi:nth-of-type(2n+1) {
+    clear: both;
+  }
+}
+@media all and (min-width: 50em) {
+  .g-4up > .gi {
+    width: 25%;
+  }
+  .g-4up > .gi:nth-of-type(2n+1) {
+    clear: none;
+  }
+  .g-4up > .gi:nth-of-type(4n+1) {
+    clear: left;
+  }
+}
+
+/* Grid Quarter (Always displayed side by side) */
+.g-quarter > .gi {
+  float: left;
+  width: 24%;
+}
+.g-quarter > .gi:nth-of-type(4n+1) {
+  clear: left;
+}
+
+@media all and (min-width: 29.75em) {
+  .g-max4 > .gi {
+    float: left;
+    width: 50%;
+  }
+  .g-max4 > .gi:nth-of-type(2n+1) {
+    clear: both;
+  }
+}
+@media all and (min-width: 39.8em) {
+  .g-max4 > .gi {
+    width: 33.3333333%;
+  }
+  .g-max4 > .gi:nth-of-type(2n+1) {
+    clear: none;
+  }
+  .g-max4 > .gi:nth-of-type(3n+1) {
+    clear: left;
+  }
+}
+@media all and (min-width: 50em) {
+  .g-max4 > .gi {
+    width: 25%;
+  }
+  .g-max4 > .gi:nth-of-type(3n+1) {
+    clear: none;
+  }
+  .g-max4 > .gi:nth-of-type(4n+1) {
+    clear: left;
+  }
+}
+
+/* Grid 5up */
+.g-max5 > .gi {
+  float: left;
+  width: 50%;
+}
+.g-max5 > .gi:nth-of-type(2n+1) {
+  clear: both;
+}
+@media all and (min-width: 39.8em) {
+  .g-max5 > .gi {
+    width: 33.3333333%;
+  }
+  .g-max5 > .gi:nth-of-type(2n+1) {
+    clear: none;
+  }
+  .g-max5 > .gi:nth-of-type(3n+1) {
+    clear: left;
+  }
+}
+@media all and (min-width: 46.8em) {
+  .g-max5 > .gi {
+    width: 25%;
+  }
+  .g-max5 > .gi:nth-of-type(3n+1) {
+    clear: none;
+  }
+  .g-max5 > .gi:nth-of-type(4n+1) {
+    clear: left;
+  }
+}
+@media all and (min-width: 48em) {
+  .g-max5 > .gi {
+    width: 20%;
+  }
+  .g-max5 > .gi:nth-of-type(4n+1) {
+    clear: none;
+  }
+  .g-max5 > .gi:nth-of-type(5n+1) {
+    clear: left;
+  }
+}
+
+/* Grid 2/3 */
+@media all and (min-width: 46.8em) {
+  .gi-2-3 {
+    float: left;
+    width: 66.666666%;
+  }
+}
+
+@media all and (min-width: 46.8em) {
+  .gi-1-3 {
+    float: left;
+    width: 33.333333%;
+  }
+}
+
+/* Grid 4up block */
+.g-opposites .gi {
+  float: left;
+}
+.g-opposites .gi:last-child {
+  float: right;
+  text-align: right;
+}
+
+/*------------------------------------*\
     $GLOBAL ELEMENTS
 \*------------------------------------*/
 /*------------------------------------*\
     $GLOBAL CLASSES
 \*------------------------------------*/
 /* Clearfix */
-.cf, .l-two-col, [role=main] {
+.cf, .l-two-col {
   *zoom: 1;
 }
 
-.cf:before, .l-two-col:before, [role=main]:before, .cf:after, .l-two-col:after, [role=main]:after {
+.cf:before, .l-two-col:before, .cf:after, .l-two-col:after {
   content: " ";
   /* 1 */
   display: table;
   /* 2 */
 }
 
-.cf:after, .l-two-col:after, [role=main]:after {
+.cf:after, .l-two-col:after {
   clear: both;
 }
 
@@ -193,6 +670,36 @@ body {
   font: 100%/1.5 "Open Sans", "Helvetica", "Arial", sans-serif;
   -webkit-text-size-adjust: 100%;
   color: #333333;
+}
+
+.sg-main {
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.sg-main:after {
+  content: " ";
+  display: block;
+  clear: both;
+}
+head:hover ~ .sg-main, head:hover ~ body .sg-main {
+  position: relative;
+}
+head:hover ~ .sg-main:before, head:hover ~ body .sg-main:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  content: " ";
+  z-index: 998;
+  background-image: -moz-linear-gradient(left, #ffc0cb, #ffffff), -moz-linear-gradient(top, rgba(0, 0, 0, 0.5) 5%, rgba(0, 0, 0, 0) 5%);
+  background-image: -webkit-linear-gradient(left, #ffc0cb, #ffffff), -webkit-linear-gradient(top, rgba(0, 0, 0, 0.5) 5%, rgba(0, 0, 0, 0) 5%);
+  background-image: linear-gradient(to right, #ffc0cb, #ffffff), linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 5%, rgba(0, 0, 0, 0) 5%);
+  background-size: 8.33333%, 100% 24px;
+  background-origin: content-box, border-box;
+  background-clip: content-box, border-box;
+  background-position: left top;
 }
 
 /* Links */
@@ -451,6 +958,55 @@ input[type="search"]::-webkit-search-decoration {
   color: gray;
 }
 
+#feedback .main {
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+}
+#feedback .main:after {
+  content: " ";
+  display: block;
+  clear: both;
+}
+head:hover ~ #feedback .main, head:hover ~ body #feedback .main {
+  position: relative;
+}
+head:hover ~ #feedback .main:before, head:hover ~ body #feedback .main:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  content: " ";
+  z-index: 998;
+  background-image: -moz-linear-gradient(left, #ffc0cb, #ffffff), -moz-linear-gradient(top, rgba(0, 0, 0, 0.5) 5%, rgba(0, 0, 0, 0) 5%);
+  background-image: -webkit-linear-gradient(left, #ffc0cb, #ffffff), -webkit-linear-gradient(top, rgba(0, 0, 0, 0.5) 5%, rgba(0, 0, 0, 0) 5%);
+  background-image: linear-gradient(to right, #ffc0cb, #ffffff), linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 5%, rgba(0, 0, 0, 0) 5%);
+  background-size: 8.33333%, 100% 24px;
+  background-origin: content-box, border-box;
+  background-clip: content-box, border-box;
+  background-position: left top;
+}
+
+.feedback-block {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 50%;
+  float: left;
+  padding-left: 1.04167%;
+  padding-right: 1.04167%;
+  margin-left: 25%;
+  margin-right: 25%;
+  padding: 5% 0;
+}
+.feedback-block h1 {
+  padding-bottom: 5%;
+}
+.feedback-block h2 {
+  padding-bottom: 2%;
+}
+
 /*------------------------------------*\
     $Table
 \*------------------------------------*/
@@ -492,425 +1048,8 @@ td {
 }
 
 /*------------------------------------*\
-    $LAYOUT
+    $jQUERY SPECIFIC
 \*------------------------------------*/
-/*------------------------------------*\
-    SUSY GRID
-\*------------------------------------*/
-/*------------------------------------*\
-IN USING THIS GRID 'TOOLKIT', the goal is to keep the HTML as semantic as possible, and use the Susy SASS mixins to do all the 'gridding'. The following name classes are just examples of what can be done (this CSS styles the 'gallery.mustache' file), but in the demo I've used easy to understand English class names to describe the concept. The grid map above ($susy) is the default grid, but can be adjusted on the fly by the Susy functions and mixins (http://susydocs.oddbird.net/en/latest/). 
-\*------------------------------------*/
-.container {
-  max-width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-}
-.container:after {
-  content: " ";
-  display: block;
-  clear: both;
-}
-
-.one.column {
-  clear: both;
-}
-.one.column > .column {
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  width: 100%;
-  float: left;
-  padding-left: 1.04167%;
-  padding-right: 1.04167%;
-}
-
-.two.columns {
-  clear: both;
-}
-.two.columns > .column {
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  width: 50%;
-  float: left;
-  padding-left: 1.04167%;
-  padding-right: 1.04167%;
-}
-
-.three.columns {
-  clear: both;
-}
-.three.columns > .column {
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  width: 33.33333%;
-  float: left;
-  padding-left: 1.04167%;
-  padding-right: 1.04167%;
-}
-
-.four.columns {
-  clear: both;
-}
-.four.columns > .column {
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  width: 25%;
-  float: left;
-  padding-left: 1.04167%;
-  padding-right: 1.04167%;
-}
-
-.five.columns {
-  clear: both;
-}
-.five.columns > .column {
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  width: 20%;
-  float: left;
-  padding-left: 1.04167%;
-  padding-right: 1.04167%;
-}
-
-.gallery > .column {
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  width: 50%;
-  float: left;
-  padding-left: 1.04167%;
-  padding-right: 1.04167%;
-}
-.gallery > .column:nth-child(2n + 1) {
-  margin-left: 0;
-  margin-right: -100%;
-  clear: both;
-}
-.gallery > .column:nth-child(2n + 2) {
-  margin-left: 50%;
-  margin-right: -100%;
-  clear: none;
-}
-@media (min-width: 46.8em) {
-  .gallery > .column {
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-    width: 33.33333%;
-    float: left;
-    padding-left: 1.04167%;
-    padding-right: 1.04167%;
-  }
-  .gallery > .column:nth-child(3n + 1) {
-    margin-left: 0;
-    margin-right: -100%;
-    clear: both;
-  }
-  .gallery > .column:nth-child(3n + 2) {
-    margin-left: 33.33333%;
-    margin-right: -100%;
-    clear: none;
-  }
-  .gallery > .column:nth-child(3n + 3) {
-    margin-left: 66.66667%;
-    margin-right: -100%;
-    clear: none;
-  }
-}
-@media (min-width: 50em) {
-  .gallery > .column {
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-    width: 25%;
-    float: left;
-    padding-left: 1.04167%;
-    padding-right: 1.04167%;
-  }
-  .gallery > .column:nth-child(4n + 1) {
-    margin-left: 0;
-    margin-right: -100%;
-    clear: both;
-  }
-  .gallery > .column:nth-child(4n + 2) {
-    margin-left: 25%;
-    margin-right: -100%;
-    clear: none;
-  }
-  .gallery > .column:nth-child(4n + 3) {
-    margin-left: 50%;
-    margin-right: -100%;
-    clear: none;
-  }
-  .gallery > .column:nth-child(4n + 4) {
-    margin-left: 75%;
-    margin-right: -100%;
-    clear: none;
-  }
-}
-
-.demo > .column {
-  background: #e0e0e0;
-  border: 1px solid #cccccc;
-  min-height: 50px;
-}
-.demo > .column:nth-of-type(2n) {
-  background: #cccccc;
-  border-color: #999999;
-}
-
-/*------------------------------------*\
-    $LAYOUT
-\*------------------------------------*/
-/* Layout Container */
-.lc, .header, [role=main], .footer {
-  max-width: 58.75em;
-  margin: 0 auto;
-  padding: 0.5em;
-}
-
-/*------------------------------------*\
-    $TEMPLATES
-\*------------------------------------*/
-/* Two Column Layout */
-@media all and (min-width: 50em) {
-  .l-two-col .l-main {
-    float: left;
-    width: 70%;
-    padding-right: 1em;
-  }
-}
-@media all and (max-width: 50em) {
-  .l-two-col .l-sidebar {
-    clear: both;
-  }
-}
-@media all and (min-width: 50em) {
-  .l-two-col .l-sidebar {
-    float: left;
-    width: 30%;
-    padding: 0 0 0 1em;
-  }
-}
-
-.hero-nav-primary, .hero-nav-secondary {
-  clear: both;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  width: 100%;
-  float: left;
-  padding-left: 1.04167%;
-  padding-right: 1.04167%;
-  padding: 3% 0;
-}
-
-.hero-nav-secondary {
-  background: #e0e0e0;
-}
-
-/*------------------------------------*\
-    $GRIDS
-\*------------------------------------*/
-/* Grid Container */
-.g {
-  overflow: hidden;
-  margin: 0 -0.5em;
-}
-
-/* Grid Item */
-.gi {
-  padding: 0.5em;
-}
-.gi img {
-  display: block;
-}
-@media all and (min-width: 46.8em) {
-  .gi {
-    float: left;
-  }
-}
-
-/* Grid 1up */
-.g-1up .gi {
-  width: 100%;
-}
-
-/* Grid 2up */
-@media all and (min-width: 46.8em) {
-  .g-2up > .gi {
-    float: left;
-    width: 50%;
-  }
-  .g-2up > .gi:nth-of-type(odd) {
-    clear: left;
-  }
-}
-
-/* Grid Half (Always displayed side by side) */
-.g-half > .gi {
-  float: left;
-  width: 50%;
-}
-.g-half > .gi:nth-of-type(odd) {
-  clear: left;
-}
-
-/* Grid 3up */
-@media all and (min-width: 46.8em) {
-  .g-3up > .gi {
-    float: left;
-    width: 50%;
-  }
-  .g-3up > .gi:nth-of-type(2n+1) {
-    clear: left;
-  }
-}
-@media all and (min-width: 50em) {
-  .g-3up > .gi {
-    width: 33.3333333%;
-  }
-  .g-3up > .gi:nth-of-type(2n+1) {
-    clear: none;
-  }
-  .g-3up > .gi:nth-of-type(3n+1) {
-    clear: left;
-  }
-}
-
-/* Grid 4up */
-@media all and (min-width: 46.8em) {
-  .g-4up > .gi {
-    float: left;
-    width: 50%;
-  }
-  .g-4up > .gi:nth-of-type(2n+1) {
-    clear: both;
-  }
-}
-@media all and (min-width: 50em) {
-  .g-4up > .gi {
-    width: 25%;
-  }
-  .g-4up > .gi:nth-of-type(2n+1) {
-    clear: none;
-  }
-  .g-4up > .gi:nth-of-type(4n+1) {
-    clear: left;
-  }
-}
-
-/* Grid Quarter (Always displayed side by side) */
-.g-quarter > .gi {
-  float: left;
-  width: 24%;
-}
-.g-quarter > .gi:nth-of-type(4n+1) {
-  clear: left;
-}
-
-@media all and (min-width: 29.75em) {
-  .g-max4 > .gi {
-    float: left;
-    width: 50%;
-  }
-  .g-max4 > .gi:nth-of-type(2n+1) {
-    clear: both;
-  }
-}
-@media all and (min-width: 39.8em) {
-  .g-max4 > .gi {
-    width: 33.3333333%;
-  }
-  .g-max4 > .gi:nth-of-type(2n+1) {
-    clear: none;
-  }
-  .g-max4 > .gi:nth-of-type(3n+1) {
-    clear: left;
-  }
-}
-@media all and (min-width: 50em) {
-  .g-max4 > .gi {
-    width: 25%;
-  }
-  .g-max4 > .gi:nth-of-type(3n+1) {
-    clear: none;
-  }
-  .g-max4 > .gi:nth-of-type(4n+1) {
-    clear: left;
-  }
-}
-
-/* Grid 5up */
-.g-max5 > .gi {
-  float: left;
-  width: 50%;
-}
-.g-max5 > .gi:nth-of-type(2n+1) {
-  clear: both;
-}
-@media all and (min-width: 39.8em) {
-  .g-max5 > .gi {
-    width: 33.3333333%;
-  }
-  .g-max5 > .gi:nth-of-type(2n+1) {
-    clear: none;
-  }
-  .g-max5 > .gi:nth-of-type(3n+1) {
-    clear: left;
-  }
-}
-@media all and (min-width: 46.8em) {
-  .g-max5 > .gi {
-    width: 25%;
-  }
-  .g-max5 > .gi:nth-of-type(3n+1) {
-    clear: none;
-  }
-  .g-max5 > .gi:nth-of-type(4n+1) {
-    clear: left;
-  }
-}
-@media all and (min-width: 48em) {
-  .g-max5 > .gi {
-    width: 20%;
-  }
-  .g-max5 > .gi:nth-of-type(4n+1) {
-    clear: none;
-  }
-  .g-max5 > .gi:nth-of-type(5n+1) {
-    clear: left;
-  }
-}
-
-/* Grid 2/3 */
-@media all and (min-width: 46.8em) {
-  .gi-2-3 {
-    float: left;
-    width: 66.666666%;
-  }
-}
-
-@media all and (min-width: 46.8em) {
-  .gi-1-3 {
-    float: left;
-    width: 33.333333%;
-  }
-}
-
-/* Grid 4up block */
-.g-opposites .gi {
-  float: left;
-}
-.g-opposites .gi:last-child {
-  float: right;
-  text-align: right;
-}
-
 /*------------------------------------*\
     $PAGE STRUCTURE
 \*------------------------------------*/
@@ -918,12 +1057,39 @@ IN USING THIS GRID 'TOOLKIT', the goal is to keep the HTML as semantic as possib
   background: #999999;
   padding: 0;
   border-bottom: 1px solid #dbdbdb;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.header:after {
+  content: " ";
+  display: block;
+  clear: both;
+}
+head:hover ~ .header, head:hover ~ body .header {
+  position: relative;
+}
+head:hover ~ .header:before, head:hover ~ body .header:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  content: " ";
+  z-index: 998;
+  background-image: -moz-linear-gradient(left, #ffc0cb, #ffffff), -moz-linear-gradient(top, rgba(0, 0, 0, 0.5) 5%, rgba(0, 0, 0, 0) 5%);
+  background-image: -webkit-linear-gradient(left, #ffc0cb, #ffffff), -webkit-linear-gradient(top, rgba(0, 0, 0, 0.5) 5%, rgba(0, 0, 0, 0) 5%);
+  background-image: linear-gradient(to right, #ffc0cb, #ffffff), linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 5%, rgba(0, 0, 0, 0) 5%);
+  background-size: 8.33333%, 100% 24px;
+  background-origin: content-box, border-box;
+  background-clip: content-box, border-box;
+  background-position: left top;
 }
 
 .logo {
   float: left;
   max-width: 9rem;
-  margin: 0.8rem;
+  margin: 0.8rem 0.8rem 0.8rem 0;
   white-space: nowrap;
   color: white;
 }
@@ -1018,7 +1184,6 @@ IN USING THIS GRID 'TOOLKIT', the goal is to keep the HTML as semantic as possib
     $MAIN CONTENT AREA
 \*------------------------------------*/
 [role=main] {
-  padding: 0.5em 0.5em 2em;
   overflow: hidden;
 }
 
@@ -1037,7 +1202,8 @@ IN USING THIS GRID 'TOOLKIT', the goal is to keep the HTML as semantic as possib
 }
 
 .footer-title {
-  display: inline-block;
+  display: block;
+  margin: 1% 0;
 }
 
 .nav-footer {
@@ -1059,8 +1225,20 @@ IN USING THIS GRID 'TOOLKIT', the goal is to keep the HTML as semantic as possib
 
 @media all and (min-width: 46.8em) {
   .copyright {
-    float: right;
+    text-align: center;
   }
+}
+
+.footer-bar {
+  clear: both;
+  background: #999999;
+  font-family: "Open Sans Condensed", Times, "Times New Roman", serif;
+  height: 30px;
+  padding: 1% 0;
+}
+
+.footer-sub-tabs {
+  background: #e0e0e0;
 }
 
 /*------------------------------------*\
@@ -1479,6 +1657,44 @@ IN USING THIS GRID 'TOOLKIT', the goal is to keep the HTML as semantic as possib
   margin: 10px auto;
 }
 
+.hero-nav-primary, .hero-nav-secondary {
+  padding: 3% 0;
+}
+
+.hero-nav-primary {
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.hero-nav-primary:after {
+  content: " ";
+  display: block;
+  clear: both;
+}
+head:hover ~ .hero-nav-primary, head:hover ~ body .hero-nav-primary {
+  position: relative;
+}
+head:hover ~ .hero-nav-primary:before, head:hover ~ body .hero-nav-primary:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  content: " ";
+  z-index: 998;
+  background-image: -moz-linear-gradient(left, #ffc0cb, #ffffff), -moz-linear-gradient(top, rgba(0, 0, 0, 0.5) 5%, rgba(0, 0, 0, 0) 5%);
+  background-image: -webkit-linear-gradient(left, #ffc0cb, #ffffff), -webkit-linear-gradient(top, rgba(0, 0, 0, 0.5) 5%, rgba(0, 0, 0, 0) 5%);
+  background-image: linear-gradient(to right, #ffc0cb, #ffffff), linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 5%, rgba(0, 0, 0, 0) 5%);
+  background-size: 8.33333%, 100% 24px;
+  background-origin: content-box, border-box;
+  background-clip: content-box, border-box;
+  background-position: left top;
+}
+
+.hero-nav-secondary {
+  background: #e0e0e0;
+}
+
 .inline-list li {
   display: inline-block;
 }
@@ -1601,41 +1817,82 @@ IN USING THIS GRID 'TOOLKIT', the goal is to keep the HTML as semantic as possib
   content: "-";
 }
 
-.tabs {
-  overflow: hidden;
-}
-.tabs ul {
-  display: table;
-  width: 100%;
-}
-.tabs ul.tab-list {
-  width: 70%;
-  float: right;
+.tab-container {
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
   clear: both;
 }
-.tabs ul.subnav {
-  background: #cccccc;
-  padding: 2% 0;
+.tab-container:after {
+  content: " ";
+  display: block;
+  clear: both;
 }
-.tabs ul.subnav li {
-  border-right: 0;
+head:hover ~ .tab-container, head:hover ~ body .tab-container {
+  position: relative;
 }
-.tabs ul.subnav li a {
-  background: inherit;
-  padding: 1em;
+head:hover ~ .tab-container:before, head:hover ~ body .tab-container:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  content: " ";
+  z-index: 998;
+  background-image: -moz-linear-gradient(left, #ffc0cb, #ffffff), -moz-linear-gradient(top, rgba(0, 0, 0, 0.5) 5%, rgba(0, 0, 0, 0) 5%);
+  background-image: -webkit-linear-gradient(left, #ffc0cb, #ffffff), -webkit-linear-gradient(top, rgba(0, 0, 0, 0.5) 5%, rgba(0, 0, 0, 0) 5%);
+  background-image: linear-gradient(to right, #ffc0cb, #ffffff), linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 5%, rgba(0, 0, 0, 0) 5%);
+  background-size: 8.33333%, 100% 24px;
+  background-origin: content-box, border-box;
+  background-clip: content-box, border-box;
+  background-position: left top;
+}
+
+.tabs {
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: -2%;
+  float: right;
+  width: 70%;
+  display: table;
+}
+.tabs:after {
+  content: " ";
+  display: block;
+  clear: both;
+}
+head:hover ~ .tabs, head:hover ~ body .tabs {
+  position: relative;
+}
+head:hover ~ .tabs:before, head:hover ~ body .tabs:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  content: " ";
+  z-index: 998;
+  background-image: -moz-linear-gradient(left, #ffc0cb, #ffffff), -moz-linear-gradient(top, rgba(0, 0, 0, 0.5) 5%, rgba(0, 0, 0, 0) 5%);
+  background-image: -webkit-linear-gradient(left, #ffc0cb, #ffffff), -webkit-linear-gradient(top, rgba(0, 0, 0, 0.5) 5%, rgba(0, 0, 0, 0) 5%);
+  background-image: linear-gradient(to right, #ffc0cb, #ffffff), linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 5%, rgba(0, 0, 0, 0) 5%);
+  background-size: 8.33333%, 100% 24px;
+  background-origin: content-box, border-box;
+  background-clip: content-box, border-box;
+  background-position: left top;
 }
 .tabs li {
+  border-right: 4px solid #999999;
   display: table-cell;
   text-align: center;
-  border-right: 4px solid #999999;
-}
-.tabs li:last-child {
-  border-right: 0;
 }
 .tabs a {
+  background: #e0e0e0;
   display: block;
   padding: 0.5em;
-  background: #e0e0e0;
+  -moz-border-radius: 15px 15px 0 0;
+  -webkit-border-radius: 15px;
+  border-radius: 15px 15px 0 0;
 }
 .tabs a:hover, .tabs a:focus {
   background: #b3b3b3;
@@ -1643,6 +1900,255 @@ IN USING THIS GRID 'TOOLKIT', the goal is to keep the HTML as semantic as possib
 .tabs a.active {
   background: #cccccc;
   color: white;
+  display: block;
+}
+
+.tab-submenu {
+  background: #cccccc;
+}
+
+.tab-submenu-list {
+  display: none;
+}
+.tab-submenu-list.active {
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+  clear: both;
+  display: block;
+}
+.tab-submenu-list.active:after {
+  content: " ";
+  display: block;
+  clear: both;
+}
+head:hover ~ .tab-submenu-list.active, head:hover ~ body .tab-submenu-list.active {
+  position: relative;
+}
+head:hover ~ .tab-submenu-list.active:before, head:hover ~ body .tab-submenu-list.active:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  content: " ";
+  z-index: 998;
+  background-image: -moz-linear-gradient(left, #ffc0cb, #ffffff), -moz-linear-gradient(top, rgba(0, 0, 0, 0.5) 5%, rgba(0, 0, 0, 0) 5%);
+  background-image: -webkit-linear-gradient(left, #ffc0cb, #ffffff), -webkit-linear-gradient(top, rgba(0, 0, 0, 0.5) 5%, rgba(0, 0, 0, 0) 5%);
+  background-image: linear-gradient(to right, #ffc0cb, #ffffff), linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 5%, rgba(0, 0, 0, 0) 5%);
+  background-size: 8.33333%, 100% 24px;
+  background-origin: content-box, border-box;
+  background-clip: content-box, border-box;
+  background-position: left top;
+}
+.tab-submenu-list li {
+  border-right: 0;
+  display: table-cell;
+  text-align: center;
+}
+.tab-submenu-list li:last-child {
+  border-right: 0;
+}
+.tab-submenu-list li a {
+  display: block;
+  background: inherit;
+  padding: 1em;
+}
+
+.tabs, .tab-submenu-list {
+  font-family: "Open Sans Condensed", Times, "Times New Roman", serif;
+}
+
+.sub-tabs {
+  background: #cccccc;
+}
+
+.tab-menu-link:active {
+  position: relative;
+  padding: 1em .5em;
+}
+.tab-menu-link:active:before, .tab-menu-link:active:after {
+  content: "";
+  display: block;
+  width: 1em;
+  /* Must match our magic number... */
+  height: 1em;
+  /* ...our notch will end up being half this size. We define it in ems to scale it up with the text size. */
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  margin-left: -.5em;
+  /* Half of our magic number. */
+}
+.tab-menu-link:active:before {
+  background: #e0e0e0;
+}
+.tab-menu-link:active:after {
+  width: 0;
+  height: 0;
+  border: 0.5em solid #cccccc;
+  /* Half of our magic number and same colours as our nav’s background. */
+  border-bottom-color: transparent;
+}
+
+.sub-tab-content {
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+  background: #e0e0e0;
+  display: none;
+  overflow: auto;
+  padding: 1% 0;
+}
+.sub-tab-content:after {
+  content: " ";
+  display: block;
+  clear: both;
+}
+head:hover ~ .sub-tab-content, head:hover ~ body .sub-tab-content {
+  position: relative;
+}
+head:hover ~ .sub-tab-content:before, head:hover ~ body .sub-tab-content:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  content: " ";
+  z-index: 998;
+  background-image: -moz-linear-gradient(left, #ffc0cb, #ffffff), -moz-linear-gradient(top, rgba(0, 0, 0, 0.5) 5%, rgba(0, 0, 0, 0) 5%);
+  background-image: -webkit-linear-gradient(left, #ffc0cb, #ffffff), -webkit-linear-gradient(top, rgba(0, 0, 0, 0.5) 5%, rgba(0, 0, 0, 0) 5%);
+  background-image: linear-gradient(to right, #ffc0cb, #ffffff), linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 5%, rgba(0, 0, 0, 0) 5%);
+  background-size: 8.33333%, 100% 24px;
+  background-origin: content-box, border-box;
+  background-clip: content-box, border-box;
+  background-position: left top;
+}
+.sub-tab-content.active {
+  display: block;
+}
+.sub-tab-content ul li {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 16.66667%;
+  float: left;
+  padding-left: 1.04167%;
+  padding-right: 1.04167%;
+  padding-top: 2%;
+}
+.sub-tab-content ul li:nth-child(6n + 1) {
+  margin-left: 0;
+  margin-right: -100%;
+  clear: both;
+}
+.sub-tab-content ul li:nth-child(6n + 2) {
+  margin-left: 16.66667%;
+  margin-right: -100%;
+  clear: none;
+}
+.sub-tab-content ul li:nth-child(6n + 3) {
+  margin-left: 33.33333%;
+  margin-right: -100%;
+  clear: none;
+}
+.sub-tab-content ul li:nth-child(6n + 4) {
+  margin-left: 50%;
+  margin-right: -100%;
+  clear: none;
+}
+.sub-tab-content ul li:nth-child(6n + 5) {
+  margin-left: 66.66667%;
+  margin-right: -100%;
+  clear: none;
+}
+.sub-tab-content ul li:nth-child(6n + 6) {
+  margin-left: 83.33333%;
+  margin-right: -100%;
+  clear: none;
+}
+
+.onset-block {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 33.33333%;
+  float: left;
+  padding-left: 1.04167%;
+  padding-right: 1.04167%;
+}
+.onset-block ul li {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 33.33333%;
+  float: left;
+  padding-left: 1.04167%;
+  padding-right: 1.04167%;
+}
+.onset-block ul li:nth-child(3n + 1) {
+  margin-left: 0;
+  margin-right: -100%;
+  clear: both;
+}
+.onset-block ul li:nth-child(3n + 2) {
+  margin-left: 33.33333%;
+  margin-right: -100%;
+  clear: none;
+}
+.onset-block ul li:nth-child(3n + 3) {
+  margin-left: 66.66667%;
+  margin-right: -100%;
+  clear: none;
+}
+
+.rimes-block {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 66.66667%;
+  float: left;
+  padding-left: 1.04167%;
+  padding-right: 1.04167%;
+}
+.rimes-block ul li {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 16.66667%;
+  float: left;
+  padding-left: 1.04167%;
+  padding-right: 1.04167%;
+}
+.rimes-block ul li:nth-child(6n + 1) {
+  margin-left: 0;
+  margin-right: -100%;
+  clear: both;
+}
+.rimes-block ul li:nth-child(6n + 2) {
+  margin-left: 16.66667%;
+  margin-right: -100%;
+  clear: none;
+}
+.rimes-block ul li:nth-child(6n + 3) {
+  margin-left: 33.33333%;
+  margin-right: -100%;
+  clear: none;
+}
+.rimes-block ul li:nth-child(6n + 4) {
+  margin-left: 50%;
+  margin-right: -100%;
+  clear: none;
+}
+.rimes-block ul li:nth-child(6n + 5) {
+  margin-left: 66.66667%;
+  margin-right: -100%;
+  clear: none;
+}
+.rimes-block ul li:nth-child(6n + 6) {
+  margin-left: 83.33333%;
+  margin-right: -100%;
+  clear: none;
 }
 
 .section {
@@ -1741,4 +2247,56 @@ IN USING THIS GRID 'TOOLKIT', the goal is to keep the HTML as semantic as possib
   left: 0;
   right: 0;
   bottom: 0;
+}
+
+#lean_overlay {
+  position: fixed;
+  z-index: 100;
+  top: 0px;
+  left: 0px;
+  height: 100%;
+  width: 100%;
+  background: #000;
+  display: none;
+}
+
+.modal {
+  position: absolute;
+  background: url(tint20.png) 0 0 repeat;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 14px;
+  max-width: 400px;
+  -moz-box-shadow: 3px 2px 5px 0px rgba(50, 50, 50, 0.75);
+  -webkit-box-shadow: 3px 2px 5px 0px rgba(50, 50, 50, 0.75);
+  box-shadow: 3px 2px 5px 0px rgba(50, 50, 50, 0.75);
+}
+.modal header {
+  background: #999999;
+  padding: 2%;
+  position: relative;
+}
+.modal h1 {
+  color: white;
+  text-align: center;
+}
+.modal section {
+  padding: 5% 10%;
+  background: white;
+}
+.modal section p {
+  text-align: center;
+}
+
+.modal-content {
+  background: white;
+}
+
+.modal_close {
+  position: absolute;
+  color: white;
+  width: 14px;
+  height: 14px;
+  display: block;
+  top: 2px;
+  right: 2px;
 }

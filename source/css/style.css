@@ -495,17 +495,7 @@ td {
     $LAYOUT
 \*------------------------------------*/
 /*------------------------------------*\
-    $LAYOUT
-\*------------------------------------*/
-/* Layout Container */
-.lc, .header, [role=main] {
-  max-width: 58.75em;
-  margin: 0 auto;
-  padding: 0.5em;
-}
-
-/*------------------------------------*\
-    SUSY
+    SUSY GRID
 \*------------------------------------*/
 /*------------------------------------*\
 IN USING THIS GRID 'TOOLKIT', the goal is to keep the HTML as semantic as possible, and use the Susy SASS mixins to do all the 'gridding'. The following name classes are just examples of what can be done (this CSS styles the 'gallery.mustache' file), but in the demo I've used easy to understand English class names to describe the concept. The grid map above ($susy) is the default grid, but can be adjusted on the fly by the Susy functions and mixins (http://susydocs.oddbird.net/en/latest/). 
@@ -521,6 +511,9 @@ IN USING THIS GRID 'TOOLKIT', the goal is to keep the HTML as semantic as possib
   clear: both;
 }
 
+.one.column {
+  clear: both;
+}
 .one.column > .column {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -531,6 +524,9 @@ IN USING THIS GRID 'TOOLKIT', the goal is to keep the HTML as semantic as possib
   padding-right: 1.04167%;
 }
 
+.two.columns {
+  clear: both;
+}
 .two.columns > .column {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -541,6 +537,9 @@ IN USING THIS GRID 'TOOLKIT', the goal is to keep the HTML as semantic as possib
   padding-right: 1.04167%;
 }
 
+.three.columns {
+  clear: both;
+}
 .three.columns > .column {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -551,6 +550,9 @@ IN USING THIS GRID 'TOOLKIT', the goal is to keep the HTML as semantic as possib
   padding-right: 1.04167%;
 }
 
+.four.columns {
+  clear: both;
+}
 .four.columns > .column {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -561,6 +563,9 @@ IN USING THIS GRID 'TOOLKIT', the goal is to keep the HTML as semantic as possib
   padding-right: 1.04167%;
 }
 
+.five.columns {
+  clear: both;
+}
 .five.columns > .column {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -659,6 +664,16 @@ IN USING THIS GRID 'TOOLKIT', the goal is to keep the HTML as semantic as possib
 }
 
 /*------------------------------------*\
+    $LAYOUT
+\*------------------------------------*/
+/* Layout Container */
+.lc, .header, [role=main], .footer {
+  max-width: 58.75em;
+  margin: 0 auto;
+  padding: 0.5em;
+}
+
+/*------------------------------------*\
     $TEMPLATES
 \*------------------------------------*/
 /* Two Column Layout */
@@ -680,6 +695,22 @@ IN USING THIS GRID 'TOOLKIT', the goal is to keep the HTML as semantic as possib
     width: 30%;
     padding: 0 0 0 1em;
   }
+}
+
+.hero-nav-primary, .hero-nav-secondary {
+  clear: both;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
+  float: left;
+  padding-left: 1.04167%;
+  padding-right: 1.04167%;
+  padding: 3% 0;
+}
+
+.hero-nav-secondary {
+  background: #e0e0e0;
 }
 
 /*------------------------------------*\
@@ -997,12 +1028,16 @@ IN USING THIS GRID 'TOOLKIT', the goal is to keep the HTML as semantic as possib
 .footer {
   clear: both;
   overflow: hidden;
-  background: #131313;
+  background: #999999;
   color: white;
   line-height: 1.2;
 }
 .footer a {
   color: #f9f9f9;
+}
+
+.footer-title {
+  display: inline-block;
 }
 
 .nav-footer {
@@ -1573,10 +1608,26 @@ IN USING THIS GRID 'TOOLKIT', the goal is to keep the HTML as semantic as possib
   display: table;
   width: 100%;
 }
+.tabs ul.tab-list {
+  width: 70%;
+  float: right;
+  clear: both;
+}
+.tabs ul.subnav {
+  background: #cccccc;
+  padding: 2% 0;
+}
+.tabs ul.subnav li {
+  border-right: 0;
+}
+.tabs ul.subnav li a {
+  background: inherit;
+  padding: 1em;
+}
 .tabs li {
   display: table-cell;
   text-align: center;
-  border-right: 1px solid #dddddd;
+  border-right: 4px solid #999999;
 }
 .tabs li:last-child {
   border-right: 0;
@@ -1584,14 +1635,22 @@ IN USING THIS GRID 'TOOLKIT', the goal is to keep the HTML as semantic as possib
 .tabs a {
   display: block;
   padding: 0.5em;
-  background: gray;
+  background: #e0e0e0;
 }
 .tabs a:hover, .tabs a:focus {
-  background: #dddddd;
+  background: #b3b3b3;
 }
 .tabs a.active {
-  background: #333333;
+  background: #cccccc;
   color: white;
+  display: inherit;
+}
+
+.footer-tab-content {
+  display: none;
+}
+.footer-tab-content.active {
+  display: block;
 }
 
 .section {

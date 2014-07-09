@@ -5,8 +5,10 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width" />
 		
-		<link rel="stylesheet" href="../../css/style.css?1404430656" media="all" />
+		<link rel="stylesheet" href="../../css/style.css?1404949953" media="all" />
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<script src="../../js/jquery.leanModal.min.js"></script>
+		
 
 		<!-- Begin Pattern Lab (Required for Pattern Lab to run properly) -->
 				<!-- never cache patterns -->
@@ -16,8 +18,8 @@
 		<meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
 		<meta http-equiv="pragma" content="no-cache" />
 		
-		<link rel="stylesheet" href="../../styleguide/css/styleguide.css?1404430656" media="all">
-		<link rel="stylesheet" href="../../styleguide/css/styleguide-specific.css?1404430656" media="all" />
+		<link rel="stylesheet" href="../../styleguide/css/styleguide.css?1404949953" media="all">
+		<link rel="stylesheet" href="../../styleguide/css/styleguide-specific.css?1404949953" media="all" />
 		
 
 		<!-- End Pattern Lab -->
@@ -140,31 +142,63 @@
 							</div>
 						</div>
 					</div>
-					<div id="molecules-centered-floaty-plaque" class="sg-pattern">
-						<h2 class="sg-pattern-head" ><a href="../../patterns/01-molecules-06-components-03-centered-floaty-plaque/01-molecules-06-components-03-centered-floaty-plaque.html" class="patternLink" data-patternpartial="molecules-centered-floaty-plaque">Centered Floaty Plaque</a></h2>
+					<div id="molecules-modal-connect" class="sg-pattern">
+						<h2 class="sg-pattern-head" ><a href="../../patterns/01-molecules-06-components-03-modal-connect/01-molecules-06-components-03-modal-connect.html" class="patternLink" data-patternpartial="molecules-modal-connect">Modal Connect</a></h2>
 						<div class="sg-pattern-body">
-							<div class="block floaty-plaque">
-  <div class="floaty-plaque-content">
-    <div class="hgroup">
-       	<h2>This is the heading group's main heading</h2>
-       	<h3>This is the heading group's subheading</h3>
-    </div>  </div>
+							<div class="block connection modal" id="connectingModal" style="display: none;">
+  <header>
+    <h1 class="delta">Connecting to the classroom computer</h1>
+    <a href="#" class="modal_close">x</a>
+  </header>
+  
+  <section>
+    <p>While we're connecting you, please dial <strong>(312) 345-6789</strong> to call your student.</p>
+    <p>You can close this window at any time.</p>
+  </section>
 </div>
+
+
+
+<script>
+
+$(function() {
+  $('a[rel*=leanModal]').leanModal({  
+    overlay: 0.9, 
+    closeButton: ".modal_close" 
+  });
+});
+
+</script>
+
 							<div class="sg-code" style="display: none">
-									<div class="sg-code-contains">
-										This pattern contains: 
-											<a href="../../patterns/01-molecules-00-text-02-heading-group/01-molecules-00-text-02-heading-group.html"><code>molecules-heading-group</code></a>
-									</div>
 								<h3 class="sg-code-head">HTML</h3>
 								<pre class="sg-code-html">
 									<code>
-										&lt;div class=&quot;block floaty-plaque&quot;&gt;
-  &lt;div class=&quot;floaty-plaque-content&quot;&gt;
-    &lt;div class=&quot;hgroup&quot;&gt;
-       	&lt;h2&gt;This is the heading group's main heading&lt;/h2&gt;
-       	&lt;h3&gt;This is the heading group's subheading&lt;/h3&gt;
-    &lt;/div&gt;  &lt;/div&gt;
+										&lt;div class=&quot;block connection modal&quot; id=&quot;connectingModal&quot; style=&quot;display: none;&quot;&gt;
+  &lt;header&gt;
+    &lt;h1 class=&quot;delta&quot;&gt;Connecting to the classroom computer&lt;/h1&gt;
+    &lt;a href=&quot;#&quot; class=&quot;modal_close&quot;&gt;x&lt;/a&gt;
+  &lt;/header&gt;
+  
+  &lt;section&gt;
+    &lt;p&gt;While we're connecting you, please dial &lt;strong&gt;(312) 345-6789&lt;/strong&gt; to call your student.&lt;/p&gt;
+    &lt;p&gt;You can close this window at any time.&lt;/p&gt;
+  &lt;/section&gt;
 &lt;/div&gt;
+
+
+
+&lt;script&gt;
+
+$(function() {
+  $('a[rel*=leanModal]').leanModal({  
+    overlay: 0.9, 
+    closeButton: &quot;.modal_close&quot; 
+  });
+});
+
+&lt;/script&gt;
+
 									</code>
 								</pre>
 							</div>
@@ -215,10 +249,10 @@
 			
 		}
 	</script>
-	<script id="pl-js-polyfill-insert-1404430656">
+	<script id="pl-js-polyfill-insert-1404949953">
 		(function() {
 			if (self != top) {
-				var cb = '1404430656';
+				var cb = '1404949953';
 				var js = [];
 				if (typeof document !== "undefined" && !("classList" in document.documentElement)) {
 					js.push("styleguide/js/vendor/classlist-polyfill.js");
@@ -227,10 +261,10 @@
 			}
 		})();
 	</script>
-	<script id="pl-js-insert-1404430656">
+	<script id="pl-js-insert-1404949953">
 		(function() {
 			if (self != top) {
-				var cb = '1404430656';
+				var cb = '1404949953';
 				var js = [ { "src": "styleguide/js/vendor/jwerty.js", "dep": [ "styleguide/js/postmessage.js", { "src": "data/annotations.js", "dep": [ "styleguide/js/annotations-pattern.js" ] }, "styleguide/js/code-pattern.js" ] } ];
 				scriptLoader.run(js,cb,'pl-js-insert');
 			}

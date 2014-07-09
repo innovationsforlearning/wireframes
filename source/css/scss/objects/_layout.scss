@@ -9,6 +9,10 @@
 	padding: $pad-half;
 }
 
+.main {
+	@include container($susy);
+}
+
 // TODO: YOU CAN PRETTY MUCH DELETE ALL THIS ONCE YOU'RE DONE WITH THE PATTERNLAB 
 
 /*------------------------------------*\
@@ -40,14 +44,7 @@
 	}
 }
 
-.hero-nav-primary, .hero-nav-secondary {
-	@include full;
-	padding: 3% 0;
-}
 
-.hero-nav-secondary {
-	background: $wf-gray-light;
-}
 
 
 /*------------------------------------*\

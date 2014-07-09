@@ -1,0 +1,25 @@
+{{! <a href="#connectingModal" rel="leanModal">Click here to connect.</a> }}
+<div class="block connection modal" id="connectingModal" style="display: none;">
+  <header>
+    <h1 class="delta">Connecting to the classroom computer</h1>
+    <a href="#" class="modal_close">x</a>
+  </header>
+  
+  <section>
+    <p>While we're connecting you, please dial <strong>(312) 345-6789</strong> to call your student.</p>
+    <p>You can close this window at any time.</p>
+  </section>
+</div>
+
+
+
+<script>
+
+$(function() {
+  $('a[rel*=leanModal]').leanModal({  
+    overlay: 0.9, 
+    closeButton: ".modal_close" 
+  });
+});
+
+</script>

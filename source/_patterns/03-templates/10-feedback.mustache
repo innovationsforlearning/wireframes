@@ -1,0 +1,42 @@
+{{> organisms-header }}
+<div class="page" id="feedback">
+  
+  <div class="main" role="main">
+    
+      {{# emergency }}
+      {{> molecules-alert:error }}
+      {{/ emergency }}
+
+      
+      <section class="feedback-block">
+        <h1 class="gamma">Thank you for tutoring today!</h1>
+        <form action="#">
+          <fieldset class="options">
+              <h2 class="delta">Did you have any issues?</h2>
+              <ul>
+                  <li><label for="checkbox1"><input id="checkbox1" name="checkbox" type="checkbox" checked="checked"> No issues!</label></li>
+                  <li><label for="checkbox2"><input id="checkbox2" name="checkbox" type="checkbox"> My student was absent</label></li>
+                  <li><label for="checkbox3"><input id="checkbox3" name="checkbox" type="checkbox"> The phone wasn't answered</label></li>
+                  <li><label for="checkbox4"><input id="checkbox4" name="checkbox" type="checkbox"> I couldn't hear my student</label></li>
+                  <li>
+                    <label for="checkbox5"><input id="checkbox5" name="checkbox" type="checkbox"> I had a technical problem with my session</label>
+                    <div class="field-container">
+                       <input id="text" type="text" placeholder="Please Describe...">
+                    </div>
+                  </li>
+                  <li>
+                    <label for="checkbox6"><input id="checkbox6" name="checkbox" type="checkbox"> I had another problem</label>
+                    <div class="field-container">
+                       <input id="text" type="text" placeholder="Please Describe...">
+                    </div>
+                  </li>
+                  
+              </ul>
+              <button class="btn">Finish</button>
+          </fieldset>
+        </form>
+      </section>
+
+  </div><!--End role=main-->
+  {{> organisms-footer }}
+</div>

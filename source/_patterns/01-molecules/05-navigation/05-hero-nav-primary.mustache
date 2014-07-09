@@ -3,7 +3,7 @@
     <div class="circleized large"><i class="{{ icon.class.calendar }}"></i></div>
     <div class="b-body">
       <h2 class="b-title-vertical">{{ title }}</h2>
-      <p class="b-text">Go to the tutor calendar.</p>
+      <p class="b-text boxer"><a href="#connectingModal" rel="leanModal">Click here to Connect.</a></p>
     </div>
   </div>
 
@@ -23,3 +23,17 @@
     </div>
   </div>
 </div>
+
+{{> molecules-modal-connect }}
+
+<script>
+
+$(function() {
+  $('a[rel*=leanModal]').leanModal({ 
+    top : 200, 
+    overlay: 0.7,
+    closeButton: ".modal_close" 
+  });
+});
+
+</script>

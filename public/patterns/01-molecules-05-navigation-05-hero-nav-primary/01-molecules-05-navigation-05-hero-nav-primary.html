@@ -5,8 +5,10 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width" />
 		
-		<link rel="stylesheet" href="../../css/style.css?1404430656" media="all" />
+		<link rel="stylesheet" href="../../css/style.css?1404949953" media="all" />
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<script src="../../js/jquery.leanModal.min.js"></script>
+		
 
 		<!-- Begin Pattern Lab (Required for Pattern Lab to run properly) -->
 				<!-- never cache patterns -->
@@ -16,8 +18,8 @@
 		<meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
 		<meta http-equiv="pragma" content="no-cache" />
 		
-		<link rel="stylesheet" href="../../styleguide/css/styleguide.css?1404430656" media="all">
-		<link rel="stylesheet" href="../../styleguide/css/styleguide-specific.css?1404430656" media="all" />
+		<link rel="stylesheet" href="../../styleguide/css/styleguide.css?1404949953" media="all">
+		<link rel="stylesheet" href="../../styleguide/css/styleguide-specific.css?1404949953" media="all" />
 		
 
 		<!-- End Pattern Lab -->
@@ -29,7 +31,7 @@
     <div class="circleized large"><i class="icon-calendar"></i></div>
     <div class="b-body">
       <h2 class="b-title-vertical">Pattern Lab</h2>
-      <p class="b-text">Go to the tutor calendar.</p>
+      <p class="b-text boxer"><a href="#connectingModal" rel="leanModal">Click here to Connect.</a></p>
     </div>
   </div>
 
@@ -49,12 +51,49 @@
     </div>
   </div>
 </div>
+
+<div class="block connection modal" id="connectingModal" style="display: none;">
+  <header>
+    <h1 class="delta">Connecting to the classroom computer</h1>
+    <a href="#" class="modal_close">x</a>
+  </header>
+  
+  <section>
+    <p>While we're connecting you, please dial <strong>(312) 345-6789</strong> to call your student.</p>
+    <p>You can close this window at any time.</p>
+  </section>
+</div>
+
+
+
+<script>
+
+$(function() {
+  $('a[rel*=leanModal]').leanModal({  
+    overlay: 0.9, 
+    closeButton: ".modal_close" 
+  });
+});
+
+</script>
+
+<script>
+
+$(function() {
+  $('a[rel*=leanModal]').leanModal({ 
+    top : 200, 
+    overlay: 0.7,
+    closeButton: ".modal_close" 
+  });
+});
+
+</script>
 	<!--DO NOT REMOVE-->
 		
 	<script>
 		// handle injection of items from PHP
 		var patternPartial = "molecules-hero-nav-primary";
-		var lineage        = [];
+		var lineage        = [{"lineagePattern":"molecules-modal-connect","lineagePath":"..\/..\/patterns\/01-molecules-06-components-03-modal-connect\/01-molecules-06-components-03-modal-connect.html"}];
 		var lineageR       = [{"lineagePattern":"templates-index","lineagePath":"..\/..\/patterns\/03-templates-03-index\/03-templates-03-index.html"}];
 		var patternState   = "";
 		var cssEnabled     = false;
@@ -91,10 +130,10 @@
 			
 		}
 	</script>
-	<script id="pl-js-polyfill-insert-1404430656">
+	<script id="pl-js-polyfill-insert-1404949953">
 		(function() {
 			if (self != top) {
-				var cb = '1404430656';
+				var cb = '1404949953';
 				var js = [];
 				if (typeof document !== "undefined" && !("classList" in document.documentElement)) {
 					js.push("styleguide/js/vendor/classlist-polyfill.js");
@@ -103,10 +142,10 @@
 			}
 		})();
 	</script>
-	<script id="pl-js-insert-1404430656">
+	<script id="pl-js-insert-1404949953">
 		(function() {
 			if (self != top) {
-				var cb = '1404430656';
+				var cb = '1404949953';
 				var js = [ { "src": "styleguide/js/vendor/jwerty.js", "dep": [ "styleguide/js/postmessage.js", { "src": "data/annotations.js", "dep": [ "styleguide/js/annotations-pattern.js" ] }, "styleguide/js/code-pattern.js" ] } ];
 				scriptLoader.run(js,cb,'pl-js-insert');
 			}

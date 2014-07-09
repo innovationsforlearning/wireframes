@@ -3,7 +3,7 @@
     &lt;div class=&quot;circleized large&quot;&gt;&lt;i class=&quot;icon-calendar&quot;&gt;&lt;/i&gt;&lt;/div&gt;
     &lt;div class=&quot;b-body&quot;&gt;
       &lt;h2 class=&quot;b-title-vertical&quot;&gt;Pattern Lab&lt;/h2&gt;
-      &lt;p class=&quot;b-text&quot;&gt;Go to the tutor calendar.&lt;/p&gt;
+      &lt;p class=&quot;b-text boxer&quot;&gt;&lt;a href=&quot;#connectingModal&quot; rel=&quot;leanModal&quot;&gt;Click here to Connect.&lt;/a&gt;&lt;/p&gt;
     &lt;/div&gt;
   &lt;/div&gt;
 
@@ -23,3 +23,40 @@
     &lt;/div&gt;
   &lt;/div&gt;
 &lt;/div&gt;
+
+&lt;div class=&quot;block connection modal&quot; id=&quot;connectingModal&quot; style=&quot;display: none;&quot;&gt;
+  &lt;header&gt;
+    &lt;h1 class=&quot;delta&quot;&gt;Connecting to the classroom computer&lt;/h1&gt;
+    &lt;a href=&quot;#&quot; class=&quot;modal_close&quot;&gt;x&lt;/a&gt;
+  &lt;/header&gt;
+  
+  &lt;section&gt;
+    &lt;p&gt;While we're connecting you, please dial &lt;strong&gt;(312) 345-6789&lt;/strong&gt; to call your student.&lt;/p&gt;
+    &lt;p&gt;You can close this window at any time.&lt;/p&gt;
+  &lt;/section&gt;
+&lt;/div&gt;
+
+
+
+&lt;script&gt;
+
+$(function() {
+  $('a[rel*=leanModal]').leanModal({  
+    overlay: 0.9, 
+    closeButton: &quot;.modal_close&quot; 
+  });
+});
+
+&lt;/script&gt;
+
+&lt;script&gt;
+
+$(function() {
+  $('a[rel*=leanModal]').leanModal({ 
+    top : 200, 
+    overlay: 0.7,
+    closeButton: &quot;.modal_close&quot; 
+  });
+});
+
+&lt;/script&gt;
