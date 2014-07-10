@@ -1,0 +1,49 @@
+.sidebar {
+  @include span(1 of 12);
+  border: 1px solid $wf-gray-light;
+  text-align: center;
+  padding: 0;
+
+  h4 {
+    padding: 3% 0;
+  }
+  
+  a {
+    display: block;
+    padding: 10% 0;
+  }
+
+  img {
+    width: 35px;
+    height: auto;
+    margin: 0 auto;
+  }
+
+  i {
+    font-style: normal;
+    height: auto;
+    text-align: center;
+    display: block;
+    span {
+      @extend .epsilon;
+      display: block;
+      text-transform: uppercase;
+      text-align: center;
+      font-family: $font-secondary;
+    }
+  }
+}
+
+.sidebar-nav {
+  padding: 4% 0;
+}
+
+.sidebar-end-session {
+  border-bottom: 1px solid $wf-gray-light;
+  width: 100%;
+  padding: 4% 0;
+  i span {
+    @extend .delta;
+  }
+  
+}

@@ -2,7 +2,7 @@
 &lt;header class=&quot;header&quot; role=&quot;banner&quot;&gt;
   &lt;div class=&quot;container&quot;&gt;
     &lt;a href=&quot;#&quot;&gt;
-      &lt;h1 class=&quot;logo&quot;&gt;TutorMate&lt;sup&gt;&amp;#174;&lt;/sup&gt; |&lt;span class=&quot;epsilon&quot;&gt;ONLINE TUTORING&lt;/span&gt;&lt;/h1&gt;
+      &lt;h1 class=&quot;logo&quot;&gt;TutorMate&lt;sup&gt;&amp;#174;&lt;/sup&gt; |&lt;span class=&quot;epsilon&quot;&gt;Online Literacy Program&lt;/span&gt;&lt;/h1&gt;
     &lt;/a&gt;    &lt;a href=&quot;#search-form&quot; class=&quot;nav-toggle nav-toggle-search icon-search&quot;&gt;&lt;span class=&quot;is-vishidden&quot;&gt;Search&lt;/span&gt;&lt;/a&gt;
     &lt;a href=&quot;#nav&quot; class=&quot;nav-toggle nav-toggle-menu icon-menu&quot;&gt;&lt;span class=&quot;is-vishidden&quot;&gt;Menu&lt;/span&gt;&lt;/a&gt;
     &lt;nav id=&quot;nav&quot; class=&quot;nav&quot;&gt;
@@ -156,23 +156,32 @@ $(function() {
 
 
       &lt;script&gt;
+
       $(function() {
+
         var theTabs = $('.tab-link');
-        var theTabSubMenus = $('.tab-submenu-list')
+        var theTabSubMenus = $('.tab-submenu-list');
+        var theTabSubMenuLinks = $('.tab-submenu-link');
+        var theTabSubMenuContent = $('.tab-submenu-content');
 
         $(theTabs).click(function(){
           var theClickedTab = $(this);
           var theClickedTabId = theClickedTab.attr('data-tab');  //.attr('data-tab');
           selectTab(theClickedTab);
           showSubNav(theClickedTabId);
+        });
+
+        $(theTabSubMenuLinks).click(function() {
+          var theClickedTabSubMenuLink = $(this);
+          var theClickedTabSubMenuLinkId = theClickedTabSubMenuLink.attr('data-tab');
+          selectTabSubMenuLink(theClickedTabSubMenuLink);
+          showTabSubMenuContent(theClickedTabSubMenuLinkId);
 
         });
 
         function selectTab(tab){            
           $(theTabs).removeClass('active');
-          // $('.tab-nav').removeClass('active');
           $(tab).addClass('active');
-          // $('#'+tab_id).addClass('active');
         }
 
         function showSubNav(tab) {
@@ -180,28 +189,23 @@ $(function() {
           $('#' + tab).addClass('active');
         }
 
-        function selectSubNavContent(tab) {
-
+        function selectTabSubMenuLink(tab) {
+          $(theTabSubMenuLinks).removeClass('active');
+          $(tab).addClass('active');
         }
-        // function selectFirstSubTab() {
-        //   $('.sub-tab-content').removeClass('active');
-        //   $('.' + tab_id + '-tabs &gt; div:first').addClass('active');
-        // }
 
-        $('.sub-tab-list a').click(function(){
+        function showTabSubMenuContent(tab) {
+          $(theTabSubMenuContent).removeClass('active');
+          $('#' + tab).addClass('active');
+        }
 
-          var tab_id = $(this).attr('data-tab');    
-          $('.sub-tab-list a').removeClass('active');
-          $('.sub-tab-content').removeClass('active');
-          $(this).addClass('active');
-          $('#'+tab_id).addClass('active');
-          
-        });
+
+
       }); // end function
       &lt;/script&gt;
       &lt;div class=&quot;footer-sub-tabs&quot;&gt;
         &lt;div class=&quot;tab-1-tabs&quot;&gt;
-          &lt;div class=&quot;sub-tab-content active&quot; id=&quot;sub-tab-1&quot;&gt; 
+          &lt;div class=&quot;tab-submenu-content active&quot; id=&quot;sub-tab-1&quot;&gt; 
             &lt;ul&gt;
               &lt;li&gt;the&lt;/li&gt;
               &lt;li&gt;sun&lt;/li&gt;
@@ -235,7 +239,7 @@ $(function() {
               &lt;li&gt;sat&lt;/li&gt;
             &lt;/ul&gt;
           &lt;/div&gt;
-          &lt;div class=&quot;sub-tab-content&quot; id=&quot;sub-tab-2&quot;&gt;
+          &lt;div class=&quot;tab-submenu-content&quot; id=&quot;sub-tab-2&quot;&gt;
             &lt;ul&gt;
               &lt;li&gt;there&lt;/li&gt;
               &lt;li&gt;we&lt;/li&gt;
@@ -269,7 +273,7 @@ $(function() {
               &lt;li&gt;the&lt;/li&gt;
             &lt;/ul&gt;
           &lt;/div&gt;
-          &lt;div class=&quot;sub-tab-content&quot; id=&quot;sub-tab-3&quot;&gt;
+          &lt;div class=&quot;tab-submenu-content&quot; id=&quot;sub-tab-3&quot;&gt;
             &lt;ul&gt;
               &lt;li&gt;house&lt;/li&gt;
               &lt;li&gt;we&lt;/li&gt;
@@ -303,7 +307,7 @@ $(function() {
               &lt;li&gt;something&lt;/li&gt;
             &lt;/ul&gt;
           &lt;/div&gt;
-          &lt;div class=&quot;sub-tab-content&quot; id=&quot;sub-tab-4&quot;&gt;
+          &lt;div class=&quot;tab-submenu-content&quot; id=&quot;sub-tab-4&quot;&gt;
             &lt;ul&gt;
               &lt;li&gt;went&lt;/li&gt;
               &lt;li&gt;bump&lt;/li&gt;
@@ -337,7 +341,7 @@ $(function() {
               &lt;li&gt;hat&lt;/li&gt;
             &lt;/ul&gt;
           &lt;/div&gt;
-          &lt;div class=&quot;sub-tab-content&quot; id=&quot;sub-tab-5&quot;&gt;
+          &lt;div class=&quot;tab-submenu-content&quot; id=&quot;sub-tab-5&quot;&gt;
             &lt;ul&gt;
               &lt;li&gt;and&lt;/li&gt;
               &lt;li&gt;he&lt;/li&gt;
@@ -371,7 +375,7 @@ $(function() {
               &lt;li&gt;good&lt;/li&gt;
             &lt;/ul&gt;
           &lt;/div&gt;
-          &lt;div class=&quot;sub-tab-content&quot; id=&quot;sub-tab-6&quot;&gt;
+          &lt;div class=&quot;tab-submenu-content&quot; id=&quot;sub-tab-6&quot;&gt;
             &lt;ul&gt;
               &lt;li&gt;fun&lt;/li&gt;
               &lt;li&gt;that&lt;/li&gt;
@@ -408,7 +412,7 @@ $(function() {
         &lt;/div&gt;
 
         &lt;div class=&quot;tab-2-tabs&quot;&gt;
-          &lt;div class=&quot;sub-tab-content&quot; id=&quot;sub-tab-7&quot;&gt;
+          &lt;div class=&quot;tab-submenu-content&quot; id=&quot;sub-tab-7&quot;&gt;
             &lt;div class=&quot;onset-block&quot;&gt;
               &lt;h4&gt;ONSETS&lt;/h4&gt;
               &lt;ul&gt;
@@ -462,7 +466,7 @@ $(function() {
               &lt;/ul&gt;
             &lt;/div&gt;
           &lt;/div&gt;
-          &lt;div class=&quot;sub-tab-content&quot; id=&quot;sub-tab-8&quot;&gt;
+          &lt;div class=&quot;tab-submenu-content&quot; id=&quot;sub-tab-8&quot;&gt;
             &lt;div class=&quot;onset-block&quot;&gt;
               &lt;h4&gt;ONSETS&lt;/h4&gt;
               &lt;ul&gt;
@@ -516,7 +520,7 @@ $(function() {
               &lt;/ul&gt;
             &lt;/div&gt;
           &lt;/div&gt;
-          &lt;div class=&quot;sub-tab-content&quot; id=&quot;sub-tab-9&quot;&gt;
+          &lt;div class=&quot;tab-submenu-content&quot; id=&quot;sub-tab-9&quot;&gt;
             &lt;div class=&quot;onset-block&quot;&gt;
               &lt;h4&gt;ONSETS&lt;/h4&gt;
               &lt;ul&gt;
@@ -570,7 +574,7 @@ $(function() {
               &lt;/ul&gt;
             &lt;/div&gt;
           &lt;/div&gt;
-          &lt;div class=&quot;sub-tab-content&quot; id=&quot;sub-tab-10&quot;&gt;
+          &lt;div class=&quot;tab-submenu-content&quot; id=&quot;sub-tab-10&quot;&gt;
             &lt;div class=&quot;onset-block&quot;&gt;
               &lt;h4&gt;ONSETS&lt;/h4&gt;
               &lt;ul&gt;

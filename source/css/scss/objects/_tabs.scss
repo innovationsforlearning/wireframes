@@ -87,9 +87,8 @@
 //   }
 // }
 
-.tab-menu-link:active {
+.tab-submenu-link.active {
   position: relative;
-  padding: 1em .5em;
   &:before,
   &:after {
     content:"";
@@ -112,7 +111,7 @@
   }
 }
 
-.sub-tab-content {
+.tab-submenu-content {
   @include container($container);
   background: $wf-gray-light;
   display: none;

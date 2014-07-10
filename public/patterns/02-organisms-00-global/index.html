@@ -5,7 +5,7 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width" />
 		
-		<link rel="stylesheet" href="../../css/style.css?1404949953" media="all" />
+		<link rel="stylesheet" href="../../css/style.css?1405024063" media="all" />
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 		<script src="../../js/jquery.leanModal.min.js"></script>
 		
@@ -18,8 +18,8 @@
 		<meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
 		<meta http-equiv="pragma" content="no-cache" />
 		
-		<link rel="stylesheet" href="../../styleguide/css/styleguide.css?1404949953" media="all">
-		<link rel="stylesheet" href="../../styleguide/css/styleguide-specific.css?1404949953" media="all" />
+		<link rel="stylesheet" href="../../styleguide/css/styleguide.css?1405024063" media="all">
+		<link rel="stylesheet" href="../../styleguide/css/styleguide-specific.css?1405024063" media="all" />
 		
 
 		<!-- End Pattern Lab -->
@@ -39,7 +39,7 @@
 <header class="header" role="banner">
   <div class="container">
     <a href="#">
-      <h1 class="logo">TutorMate<sup>&#174;</sup> |<span class="epsilon">ONLINE TUTORING</span></h1>
+      <h1 class="logo">TutorMate<sup>&#174;</sup> |<span class="epsilon">Online Literacy Program</span></h1>
     </a>    <a href="#search-form" class="nav-toggle nav-toggle-search icon-search"><span class="is-vishidden">Search</span></a>
     <a href="#nav" class="nav-toggle nav-toggle-menu icon-menu"><span class="is-vishidden">Menu</span></a>
     <nav id="nav" class="nav">
@@ -68,7 +68,7 @@
 &lt;header class=&quot;header&quot; role=&quot;banner&quot;&gt;
   &lt;div class=&quot;container&quot;&gt;
     &lt;a href=&quot;#&quot;&gt;
-      &lt;h1 class=&quot;logo&quot;&gt;TutorMate&lt;sup&gt;&amp;#174;&lt;/sup&gt; |&lt;span class=&quot;epsilon&quot;&gt;ONLINE TUTORING&lt;/span&gt;&lt;/h1&gt;
+      &lt;h1 class=&quot;logo&quot;&gt;TutorMate&lt;sup&gt;&amp;#174;&lt;/sup&gt; |&lt;span class=&quot;epsilon&quot;&gt;Online Literacy Program&lt;/span&gt;&lt;/h1&gt;
     &lt;/a&gt;    &lt;a href=&quot;#search-form&quot; class=&quot;nav-toggle nav-toggle-search icon-search&quot;&gt;&lt;span class=&quot;is-vishidden&quot;&gt;Search&lt;/span&gt;&lt;/a&gt;
     &lt;a href=&quot;#nav&quot; class=&quot;nav-toggle nav-toggle-menu icon-menu&quot;&gt;&lt;span class=&quot;is-vishidden&quot;&gt;Menu&lt;/span&gt;&lt;/a&gt;
     &lt;nav id=&quot;nav&quot; class=&quot;nav&quot;&gt;
@@ -135,23 +135,32 @@
 
 
       <script>
+
       $(function() {
+
         var theTabs = $('.tab-link');
-        var theTabSubMenus = $('.tab-submenu-list')
+        var theTabSubMenus = $('.tab-submenu-list');
+        var theTabSubMenuLinks = $('.tab-submenu-link');
+        var theTabSubMenuContent = $('.tab-submenu-content');
 
         $(theTabs).click(function(){
           var theClickedTab = $(this);
           var theClickedTabId = theClickedTab.attr('data-tab');  //.attr('data-tab');
           selectTab(theClickedTab);
           showSubNav(theClickedTabId);
+        });
+
+        $(theTabSubMenuLinks).click(function() {
+          var theClickedTabSubMenuLink = $(this);
+          var theClickedTabSubMenuLinkId = theClickedTabSubMenuLink.attr('data-tab');
+          selectTabSubMenuLink(theClickedTabSubMenuLink);
+          showTabSubMenuContent(theClickedTabSubMenuLinkId);
 
         });
 
         function selectTab(tab){            
           $(theTabs).removeClass('active');
-          // $('.tab-nav').removeClass('active');
           $(tab).addClass('active');
-          // $('#'+tab_id).addClass('active');
         }
 
         function showSubNav(tab) {
@@ -159,28 +168,23 @@
           $('#' + tab).addClass('active');
         }
 
-        function selectSubNavContent(tab) {
-
+        function selectTabSubMenuLink(tab) {
+          $(theTabSubMenuLinks).removeClass('active');
+          $(tab).addClass('active');
         }
-        // function selectFirstSubTab() {
-        //   $('.sub-tab-content').removeClass('active');
-        //   $('.' + tab_id + '-tabs > div:first').addClass('active');
-        // }
 
-        $('.sub-tab-list a').click(function(){
+        function showTabSubMenuContent(tab) {
+          $(theTabSubMenuContent).removeClass('active');
+          $('#' + tab).addClass('active');
+        }
 
-          var tab_id = $(this).attr('data-tab');    
-          $('.sub-tab-list a').removeClass('active');
-          $('.sub-tab-content').removeClass('active');
-          $(this).addClass('active');
-          $('#'+tab_id).addClass('active');
-          
-        });
+
+
       }); // end function
       </script>
     <div class="footer-sub-tabs">
       <div class="tab-1-tabs">
-        <div class="sub-tab-content active" id="sub-tab-1"> 
+        <div class="tab-submenu-content active" id="sub-tab-1"> 
           <ul>
             <li>the</li>
             <li>sun</li>
@@ -214,7 +218,7 @@
             <li>sat</li>
           </ul>
         </div>
-        <div class="sub-tab-content" id="sub-tab-2">
+        <div class="tab-submenu-content" id="sub-tab-2">
           <ul>
             <li>there</li>
             <li>we</li>
@@ -248,7 +252,7 @@
             <li>the</li>
           </ul>
         </div>
-        <div class="sub-tab-content" id="sub-tab-3">
+        <div class="tab-submenu-content" id="sub-tab-3">
           <ul>
             <li>house</li>
             <li>we</li>
@@ -282,7 +286,7 @@
             <li>something</li>
           </ul>
         </div>
-        <div class="sub-tab-content" id="sub-tab-4">
+        <div class="tab-submenu-content" id="sub-tab-4">
           <ul>
             <li>went</li>
             <li>bump</li>
@@ -316,7 +320,7 @@
             <li>hat</li>
           </ul>
         </div>
-        <div class="sub-tab-content" id="sub-tab-5">
+        <div class="tab-submenu-content" id="sub-tab-5">
           <ul>
             <li>and</li>
             <li>he</li>
@@ -350,7 +354,7 @@
             <li>good</li>
           </ul>
         </div>
-        <div class="sub-tab-content" id="sub-tab-6">
+        <div class="tab-submenu-content" id="sub-tab-6">
           <ul>
             <li>fun</li>
             <li>that</li>
@@ -387,7 +391,7 @@
       </div>
 
       <div class="tab-2-tabs">
-        <div class="sub-tab-content" id="sub-tab-7">
+        <div class="tab-submenu-content" id="sub-tab-7">
           <div class="onset-block">
             <h4>ONSETS</h4>
             <ul>
@@ -441,7 +445,7 @@
             </ul>
           </div>
         </div>
-        <div class="sub-tab-content" id="sub-tab-8">
+        <div class="tab-submenu-content" id="sub-tab-8">
           <div class="onset-block">
             <h4>ONSETS</h4>
             <ul>
@@ -495,7 +499,7 @@
             </ul>
           </div>
         </div>
-        <div class="sub-tab-content" id="sub-tab-9">
+        <div class="tab-submenu-content" id="sub-tab-9">
           <div class="onset-block">
             <h4>ONSETS</h4>
             <ul>
@@ -549,7 +553,7 @@
             </ul>
           </div>
         </div>
-        <div class="sub-tab-content" id="sub-tab-10">
+        <div class="tab-submenu-content" id="sub-tab-10">
           <div class="onset-block">
             <h4>ONSETS</h4>
             <ul>
@@ -669,23 +673,32 @@
 
 
       &lt;script&gt;
+
       $(function() {
+
         var theTabs = $('.tab-link');
-        var theTabSubMenus = $('.tab-submenu-list')
+        var theTabSubMenus = $('.tab-submenu-list');
+        var theTabSubMenuLinks = $('.tab-submenu-link');
+        var theTabSubMenuContent = $('.tab-submenu-content');
 
         $(theTabs).click(function(){
           var theClickedTab = $(this);
           var theClickedTabId = theClickedTab.attr('data-tab');  //.attr('data-tab');
           selectTab(theClickedTab);
           showSubNav(theClickedTabId);
+        });
+
+        $(theTabSubMenuLinks).click(function() {
+          var theClickedTabSubMenuLink = $(this);
+          var theClickedTabSubMenuLinkId = theClickedTabSubMenuLink.attr('data-tab');
+          selectTabSubMenuLink(theClickedTabSubMenuLink);
+          showTabSubMenuContent(theClickedTabSubMenuLinkId);
 
         });
 
         function selectTab(tab){            
           $(theTabs).removeClass('active');
-          // $('.tab-nav').removeClass('active');
           $(tab).addClass('active');
-          // $('#'+tab_id).addClass('active');
         }
 
         function showSubNav(tab) {
@@ -693,28 +706,23 @@
           $('#' + tab).addClass('active');
         }
 
-        function selectSubNavContent(tab) {
-
+        function selectTabSubMenuLink(tab) {
+          $(theTabSubMenuLinks).removeClass('active');
+          $(tab).addClass('active');
         }
-        // function selectFirstSubTab() {
-        //   $('.sub-tab-content').removeClass('active');
-        //   $('.' + tab_id + '-tabs &gt; div:first').addClass('active');
-        // }
 
-        $('.sub-tab-list a').click(function(){
+        function showTabSubMenuContent(tab) {
+          $(theTabSubMenuContent).removeClass('active');
+          $('#' + tab).addClass('active');
+        }
 
-          var tab_id = $(this).attr('data-tab');    
-          $('.sub-tab-list a').removeClass('active');
-          $('.sub-tab-content').removeClass('active');
-          $(this).addClass('active');
-          $('#'+tab_id).addClass('active');
-          
-        });
+
+
       }); // end function
       &lt;/script&gt;
     &lt;div class=&quot;footer-sub-tabs&quot;&gt;
       &lt;div class=&quot;tab-1-tabs&quot;&gt;
-        &lt;div class=&quot;sub-tab-content active&quot; id=&quot;sub-tab-1&quot;&gt; 
+        &lt;div class=&quot;tab-submenu-content active&quot; id=&quot;sub-tab-1&quot;&gt; 
           &lt;ul&gt;
             &lt;li&gt;the&lt;/li&gt;
             &lt;li&gt;sun&lt;/li&gt;
@@ -748,7 +756,7 @@
             &lt;li&gt;sat&lt;/li&gt;
           &lt;/ul&gt;
         &lt;/div&gt;
-        &lt;div class=&quot;sub-tab-content&quot; id=&quot;sub-tab-2&quot;&gt;
+        &lt;div class=&quot;tab-submenu-content&quot; id=&quot;sub-tab-2&quot;&gt;
           &lt;ul&gt;
             &lt;li&gt;there&lt;/li&gt;
             &lt;li&gt;we&lt;/li&gt;
@@ -782,7 +790,7 @@
             &lt;li&gt;the&lt;/li&gt;
           &lt;/ul&gt;
         &lt;/div&gt;
-        &lt;div class=&quot;sub-tab-content&quot; id=&quot;sub-tab-3&quot;&gt;
+        &lt;div class=&quot;tab-submenu-content&quot; id=&quot;sub-tab-3&quot;&gt;
           &lt;ul&gt;
             &lt;li&gt;house&lt;/li&gt;
             &lt;li&gt;we&lt;/li&gt;
@@ -816,7 +824,7 @@
             &lt;li&gt;something&lt;/li&gt;
           &lt;/ul&gt;
         &lt;/div&gt;
-        &lt;div class=&quot;sub-tab-content&quot; id=&quot;sub-tab-4&quot;&gt;
+        &lt;div class=&quot;tab-submenu-content&quot; id=&quot;sub-tab-4&quot;&gt;
           &lt;ul&gt;
             &lt;li&gt;went&lt;/li&gt;
             &lt;li&gt;bump&lt;/li&gt;
@@ -850,7 +858,7 @@
             &lt;li&gt;hat&lt;/li&gt;
           &lt;/ul&gt;
         &lt;/div&gt;
-        &lt;div class=&quot;sub-tab-content&quot; id=&quot;sub-tab-5&quot;&gt;
+        &lt;div class=&quot;tab-submenu-content&quot; id=&quot;sub-tab-5&quot;&gt;
           &lt;ul&gt;
             &lt;li&gt;and&lt;/li&gt;
             &lt;li&gt;he&lt;/li&gt;
@@ -884,7 +892,7 @@
             &lt;li&gt;good&lt;/li&gt;
           &lt;/ul&gt;
         &lt;/div&gt;
-        &lt;div class=&quot;sub-tab-content&quot; id=&quot;sub-tab-6&quot;&gt;
+        &lt;div class=&quot;tab-submenu-content&quot; id=&quot;sub-tab-6&quot;&gt;
           &lt;ul&gt;
             &lt;li&gt;fun&lt;/li&gt;
             &lt;li&gt;that&lt;/li&gt;
@@ -921,7 +929,7 @@
       &lt;/div&gt;
 
       &lt;div class=&quot;tab-2-tabs&quot;&gt;
-        &lt;div class=&quot;sub-tab-content&quot; id=&quot;sub-tab-7&quot;&gt;
+        &lt;div class=&quot;tab-submenu-content&quot; id=&quot;sub-tab-7&quot;&gt;
           &lt;div class=&quot;onset-block&quot;&gt;
             &lt;h4&gt;ONSETS&lt;/h4&gt;
             &lt;ul&gt;
@@ -975,7 +983,7 @@
             &lt;/ul&gt;
           &lt;/div&gt;
         &lt;/div&gt;
-        &lt;div class=&quot;sub-tab-content&quot; id=&quot;sub-tab-8&quot;&gt;
+        &lt;div class=&quot;tab-submenu-content&quot; id=&quot;sub-tab-8&quot;&gt;
           &lt;div class=&quot;onset-block&quot;&gt;
             &lt;h4&gt;ONSETS&lt;/h4&gt;
             &lt;ul&gt;
@@ -1029,7 +1037,7 @@
             &lt;/ul&gt;
           &lt;/div&gt;
         &lt;/div&gt;
-        &lt;div class=&quot;sub-tab-content&quot; id=&quot;sub-tab-9&quot;&gt;
+        &lt;div class=&quot;tab-submenu-content&quot; id=&quot;sub-tab-9&quot;&gt;
           &lt;div class=&quot;onset-block&quot;&gt;
             &lt;h4&gt;ONSETS&lt;/h4&gt;
             &lt;ul&gt;
@@ -1083,7 +1091,7 @@
             &lt;/ul&gt;
           &lt;/div&gt;
         &lt;/div&gt;
-        &lt;div class=&quot;sub-tab-content&quot; id=&quot;sub-tab-10&quot;&gt;
+        &lt;div class=&quot;tab-submenu-content&quot; id=&quot;sub-tab-10&quot;&gt;
           &lt;div class=&quot;onset-block&quot;&gt;
             &lt;h4&gt;ONSETS&lt;/h4&gt;
             &lt;ul&gt;
@@ -1156,6 +1164,140 @@
 							</div>
 						</div>
 					</div>
+					<div id="organisms-sidebar" class="sg-pattern">
+						<h2 class="sg-pattern-head" ><a href="../../patterns/02-organisms-00-global-02-sidebar/02-organisms-00-global-02-sidebar.html" class="patternLink" data-patternpartial="organisms-sidebar">Sidebar</a></h2>
+						<div class="sg-pattern-body">
+							<div id="sidebar" class="sidebar">
+  <h4>Session Timer</h4>
+  <time class="gamma">00:00</time>
+  <div class="sidebar-end-session block">
+    <i class="close-icon"><img src="../../images/temp_pngs/icon-stop.png" /><span>END SESSION</span></i>  
+  </div>
+
+  <h4>Activities</h4>
+  <nav class="sidebar-nav">
+    <a href="#"> <i class="icon-flashcard"><img src="../../images/temp_pngs/icon-flashcard.png" alt=""><span>FLASHCARD</span></i>
+    </a>
+    <a href="#"> <i class="icon-stories"><img src="../../images/temp_pngs/icon-stories.png" alt=""><span>stories</span></i>
+    </a>
+    <a href="#">
+      <i class="icon-wordsort">
+        <img src="../../images/temp_pngs/icon-wordsort.png" alt=""><span>wordsort</span></i>
+    </a>
+    <a href="#">
+      <i class="icon-tic-tac">
+        <img src="../../images/temp_pngs/icon-tic-tac.png" alt=""><span>tic tac toe</span></i>
+    </a>
+    <a href="#">
+      <i class="icon-mystery">
+        <img src="../../images/temp_pngs/icon-mystery.png" alt=""><span>mystery</span></i>
+    </a>
+    <a href="#">
+      <i class="icon-whiteboard">
+        <img src="../../images/temp_pngs/icon-whiteboard.png" alt=""><span>whiteboard</span></i>
+    </a>
+
+  </nav>
+
+</div>
+							<div class="sg-code" style="display: none">
+								<h3 class="sg-code-head">HTML</h3>
+								<pre class="sg-code-html">
+									<code>
+										&lt;div id=&quot;sidebar&quot; class=&quot;sidebar&quot;&gt;
+  &lt;h4&gt;Session Timer&lt;/h4&gt;
+  &lt;time class=&quot;gamma&quot;&gt;00:00&lt;/time&gt;
+  &lt;div class=&quot;sidebar-end-session block&quot;&gt;
+    &lt;i class=&quot;close-icon&quot;&gt;&lt;img src=&quot;../../images/temp_pngs/icon-stop.png&quot; /&gt;&lt;span&gt;END SESSION&lt;/span&gt;&lt;/i&gt;  
+  &lt;/div&gt;
+
+  &lt;h4&gt;Activities&lt;/h4&gt;
+  &lt;nav class=&quot;sidebar-nav&quot;&gt;
+    &lt;a href=&quot;#&quot;&gt; &lt;i class=&quot;icon-flashcard&quot;&gt;&lt;img src=&quot;../../images/temp_pngs/icon-flashcard.png&quot; alt=&quot;&quot;&gt;&lt;span&gt;FLASHCARD&lt;/span&gt;&lt;/i&gt;
+    &lt;/a&gt;
+    &lt;a href=&quot;#&quot;&gt; &lt;i class=&quot;icon-stories&quot;&gt;&lt;img src=&quot;../../images/temp_pngs/icon-stories.png&quot; alt=&quot;&quot;&gt;&lt;span&gt;stories&lt;/span&gt;&lt;/i&gt;
+    &lt;/a&gt;
+    &lt;a href=&quot;#&quot;&gt;
+      &lt;i class=&quot;icon-wordsort&quot;&gt;
+        &lt;img src=&quot;../../images/temp_pngs/icon-wordsort.png&quot; alt=&quot;&quot;&gt;&lt;span&gt;wordsort&lt;/span&gt;&lt;/i&gt;
+    &lt;/a&gt;
+    &lt;a href=&quot;#&quot;&gt;
+      &lt;i class=&quot;icon-tic-tac&quot;&gt;
+        &lt;img src=&quot;../../images/temp_pngs/icon-tic-tac.png&quot; alt=&quot;&quot;&gt;&lt;span&gt;tic tac toe&lt;/span&gt;&lt;/i&gt;
+    &lt;/a&gt;
+    &lt;a href=&quot;#&quot;&gt;
+      &lt;i class=&quot;icon-mystery&quot;&gt;
+        &lt;img src=&quot;../../images/temp_pngs/icon-mystery.png&quot; alt=&quot;&quot;&gt;&lt;span&gt;mystery&lt;/span&gt;&lt;/i&gt;
+    &lt;/a&gt;
+    &lt;a href=&quot;#&quot;&gt;
+      &lt;i class=&quot;icon-whiteboard&quot;&gt;
+        &lt;img src=&quot;../../images/temp_pngs/icon-whiteboard.png&quot; alt=&quot;&quot;&gt;&lt;span&gt;whiteboard&lt;/span&gt;&lt;/i&gt;
+    &lt;/a&gt;
+
+  &lt;/nav&gt;
+
+&lt;/div&gt;
+									</code>
+								</pre>
+							</div>
+						</div>
+					</div>
+					<div id="organisms-header-app" class="sg-pattern">
+						<h2 class="sg-pattern-head" ><a href="../../patterns/02-organisms-00-global-03-header-app/02-organisms-00-global-03-header-app.html" class="patternLink" data-patternpartial="organisms-header-app">Header App</a></h2>
+						<div class="sg-pattern-body">
+							<!-- Begin .header -->
+<header class="header" role="banner">
+  <div class="container">
+    <a href="#">
+      <h1 class="logo">TutorMate<sup>&#174;</sup> |<span class="epsilon">Online Literacy Program</span></h1>
+    </a>    <a href="#search-form" class="nav-toggle nav-toggle-search icon-search"><span class="is-vishidden">Search</span></a>
+    <a href="#nav" class="nav-toggle nav-toggle-menu icon-menu"><span class="is-vishidden">Menu</span></a>
+    <nav id="nav" class="nav">
+    	<ul class="nav-list">
+    		<li><a href="#" class="iconized"><i class="icon-home">Home</i></a></li>
+    		<li><a href="#" class="iconized"><i class="icon-lifebuoy">Immediate Assistance</i></a></li>
+    		<li><a href="#" class="iconized"><i class="icon-logout">Hi, John! Log Out</i></a></li>
+    	</ul>
+    </nav><!--end .nav-->
+
+  </div>
+  
+</header>
+<!-- End .header -->
+							<div class="sg-code" style="display: none">
+									<div class="sg-code-contains">
+										This pattern contains: 
+											<a href="../../patterns/00-atoms-04-images-00-logo/00-atoms-04-images-00-logo.html"><code>atoms-logo</code></a>
+											<a href="../../patterns/01-molecules-05-navigation-00-primary-nav/01-molecules-05-navigation-00-primary-nav.html"><code>molecules-primary-nav</code></a>
+											<a href="../../patterns/01-molecules-04-forms-00-search/01-molecules-04-forms-00-search.html"><code>molecules-search</code></a>
+									</div>
+								<h3 class="sg-code-head">HTML</h3>
+								<pre class="sg-code-html">
+									<code>
+										&lt;!-- Begin .header --&gt;
+&lt;header class=&quot;header&quot; role=&quot;banner&quot;&gt;
+  &lt;div class=&quot;container&quot;&gt;
+    &lt;a href=&quot;#&quot;&gt;
+      &lt;h1 class=&quot;logo&quot;&gt;TutorMate&lt;sup&gt;&amp;#174;&lt;/sup&gt; |&lt;span class=&quot;epsilon&quot;&gt;Online Literacy Program&lt;/span&gt;&lt;/h1&gt;
+    &lt;/a&gt;    &lt;a href=&quot;#search-form&quot; class=&quot;nav-toggle nav-toggle-search icon-search&quot;&gt;&lt;span class=&quot;is-vishidden&quot;&gt;Search&lt;/span&gt;&lt;/a&gt;
+    &lt;a href=&quot;#nav&quot; class=&quot;nav-toggle nav-toggle-menu icon-menu&quot;&gt;&lt;span class=&quot;is-vishidden&quot;&gt;Menu&lt;/span&gt;&lt;/a&gt;
+    &lt;nav id=&quot;nav&quot; class=&quot;nav&quot;&gt;
+    	&lt;ul class=&quot;nav-list&quot;&gt;
+    		&lt;li&gt;&lt;a href=&quot;#&quot; class=&quot;iconized&quot;&gt;&lt;i class=&quot;icon-home&quot;&gt;Home&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;
+    		&lt;li&gt;&lt;a href=&quot;#&quot; class=&quot;iconized&quot;&gt;&lt;i class=&quot;icon-lifebuoy&quot;&gt;Immediate Assistance&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;
+    		&lt;li&gt;&lt;a href=&quot;#&quot; class=&quot;iconized&quot;&gt;&lt;i class=&quot;icon-logout&quot;&gt;Hi, John! Log Out&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;
+    	&lt;/ul&gt;
+    &lt;/nav&gt;&lt;!--end .nav--&gt;
+
+  &lt;/div&gt;
+  
+&lt;/header&gt;
+&lt;!-- End .header --&gt;
+									</code>
+								</pre>
+							</div>
+						</div>
+					</div>
 			</div> <!--end #sg-patterns-->
 	
 		</div><!--end .sg-main-->
@@ -1201,10 +1343,10 @@
 			
 		}
 	</script>
-	<script id="pl-js-polyfill-insert-1404949953">
+	<script id="pl-js-polyfill-insert-1405024063">
 		(function() {
 			if (self != top) {
-				var cb = '1404949953';
+				var cb = '1405024063';
 				var js = [];
 				if (typeof document !== "undefined" && !("classList" in document.documentElement)) {
 					js.push("styleguide/js/vendor/classlist-polyfill.js");
@@ -1213,10 +1355,10 @@
 			}
 		})();
 	</script>
-	<script id="pl-js-insert-1404949953">
+	<script id="pl-js-insert-1405024063">
 		(function() {
 			if (self != top) {
-				var cb = '1404949953';
+				var cb = '1405024063';
 				var js = [ { "src": "styleguide/js/vendor/jwerty.js", "dep": [ "styleguide/js/postmessage.js", { "src": "data/annotations.js", "dep": [ "styleguide/js/annotations-pattern.js" ] }, "styleguide/js/code-pattern.js" ] } ];
 				scriptLoader.run(js,cb,'pl-js-insert');
 			}

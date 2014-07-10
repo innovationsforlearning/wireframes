@@ -36,23 +36,32 @@
 
 
 &lt;script&gt;
+
 $(function() {
+
   var theTabs = $('.tab-link');
-  var theTabSubMenus = $('.tab-submenu-list')
+  var theTabSubMenus = $('.tab-submenu-list');
+  var theTabSubMenuLinks = $('.tab-submenu-link');
+  var theTabSubMenuContent = $('.tab-submenu-content');
 
   $(theTabs).click(function(){
     var theClickedTab = $(this);
     var theClickedTabId = theClickedTab.attr('data-tab');  //.attr('data-tab');
     selectTab(theClickedTab);
     showSubNav(theClickedTabId);
+  });
+
+  $(theTabSubMenuLinks).click(function() {
+    var theClickedTabSubMenuLink = $(this);
+    var theClickedTabSubMenuLinkId = theClickedTabSubMenuLink.attr('data-tab');
+    selectTabSubMenuLink(theClickedTabSubMenuLink);
+    showTabSubMenuContent(theClickedTabSubMenuLinkId);
 
   });
 
   function selectTab(tab){            
     $(theTabs).removeClass('active');
-    // $('.tab-nav').removeClass('active');
     $(tab).addClass('active');
-    // $('#'+tab_id).addClass('active');
   }
 
   function showSubNav(tab) {
@@ -60,22 +69,17 @@ $(function() {
     $('#' + tab).addClass('active');
   }
 
-  function selectSubNavContent(tab) {
-
+  function selectTabSubMenuLink(tab) {
+    $(theTabSubMenuLinks).removeClass('active');
+    $(tab).addClass('active');
   }
-  // function selectFirstSubTab() {
-  //   $('.sub-tab-content').removeClass('active');
-  //   $('.' + tab_id + '-tabs &gt; div:first').addClass('active');
-  // }
 
-  $('.sub-tab-list a').click(function(){
+  function showTabSubMenuContent(tab) {
+    $(theTabSubMenuContent).removeClass('active');
+    $('#' + tab).addClass('active');
+  }
 
-    var tab_id = $(this).attr('data-tab');    
-    $('.sub-tab-list a').removeClass('active');
-    $('.sub-tab-content').removeClass('active');
-    $(this).addClass('active');
-    $('#'+tab_id).addClass('active');
-    
-  });
+
+
 }); // end function
 &lt;/script&gt;

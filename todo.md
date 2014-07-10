@@ -4,3 +4,4 @@
 - remove one version of clearfix
 - move footer jQuery into its own file
 - refactor padding on headings
+- style checkboxes
