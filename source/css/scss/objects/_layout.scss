@@ -10,7 +10,7 @@
 }
 
 .main {
-	@include container($susy);
+	@include container($container);
 }
 
 // TODO: YOU CAN PRETTY MUCH DELETE ALL THIS ONCE YOU'RE DONE WITH THE PATTERNLAB 

@@ -19,8 +19,9 @@ $warning : #fff664;
 $information : #000db5;
 
 $wf-gray-light: #e3e3e3;
+$wf-gray-med-light: rgba(255, 255, 255, 0.5);
 $wf-gray-med: #b1b1b1;
-$wf-gray-med-dark: darken($wf-gray-med, 10%); // this is the first gray outside of mockups
+$wf-gray-med-dark: darken($wf-gray-med, 10%); 
 $wf-gray-dark: #999;
 
 

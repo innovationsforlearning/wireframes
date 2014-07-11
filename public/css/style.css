@@ -311,7 +311,7 @@ head:hover ~ .container:before, head:hover ~ body .container:before {
 }
 
 .main {
-  max-width: 100%;
+  max-width: 960px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -669,7 +669,7 @@ body {
   background: white;
   font: 100%/1.5 "Open Sans", "Helvetica", "Arial", sans-serif;
   -webkit-text-size-adjust: 100%;
-  color: #333333;
+  color: #999999;
 }
 
 .sg-main {
@@ -734,7 +734,7 @@ h3, .gamma, .logo {
   font-size: 1.61803em;
 }
 
-h4, .delta, .nav-list, .sidebar-end-session i span {
+h4, .delta, .nav-list, .sidebar-end-session i span, .story-block .story-block-title {
   font-size: 1em;
 }
 
@@ -1211,6 +1211,7 @@ head:hover ~ .header:before, head:hover ~ body .header:before {
 }
 
 .footer-title {
+  color: white;
   display: block;
   margin: 1% 0;
 }
@@ -1295,6 +1296,120 @@ head:hover ~ .header:before, head:hover ~ body .header:before {
   border-bottom: 1px solid #e3e3e3;
   width: 100%;
   padding: 4% 0;
+}
+
+.activity-main {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 91.66667%;
+  float: left;
+  overflow: hidden;
+  *zoom: 1;
+}
+
+.activity-content-header {
+  overflow: hidden;
+  *zoom: 1;
+  background: #e3e3e3;
+  padding: 2% 0;
+  position: relative;
+}
+.activity-content-header h1 {
+  clear: both;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
+  float: left;
+  padding-left: 1.04167%;
+  padding-right: 1.04167%;
+}
+.activity-content-header .next-activity {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 18.18182%;
+  float: right;
+  padding-left: 1.13636%;
+  padding-right: 1.13636%;
+}
+
+.activity-instructions {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 45.45455%;
+  float: left;
+  padding-left: 1.13636%;
+  padding-right: 1.13636%;
+  font-size: 11px;
+}
+
+.story-block {
+  padding: 2% 0;
+}
+.story-block .story-block-title {
+  clear: both;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
+  float: left;
+  padding-left: 1.04167%;
+  padding-right: 1.04167%;
+  padding-bottom: 1%;
+}
+.story-block .gallery > .column {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 20%;
+  float: left;
+  padding-left: 1.25%;
+  padding-right: 1.25%;
+}
+.story-block .gallery > .column:nth-child(5n + 1) {
+  margin-left: 0;
+  margin-right: -100%;
+  clear: both;
+}
+.story-block .gallery > .column:nth-child(5n + 2) {
+  margin-left: 20%;
+  margin-right: -100%;
+  clear: none;
+}
+.story-block .gallery > .column:nth-child(5n + 3) {
+  margin-left: 40%;
+  margin-right: -100%;
+  clear: none;
+}
+.story-block .gallery > .column:nth-child(5n + 4) {
+  margin-left: 60.0%;
+  margin-right: -100%;
+  clear: none;
+}
+.story-block .gallery > .column:nth-child(5n + 5) {
+  margin-left: 80%;
+  margin-right: -100%;
+  clear: none;
+}
+.story-block figure {
+  position: relative;
+}
+.story-block figure:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  background: white;
+}
+.story-block figcaption {
+  font-family: "Open Sans Condensed", Times, "Times New Roman", serif;
+  font-style: normal;
+  font-size: 15px;
 }
 
 /*------------------------------------*\
@@ -1907,7 +2022,7 @@ head:hover ~ .tab-container:before, head:hover ~ body .tab-container:before {
   background-position: left top;
 }
 
-.tabs {
+.resource-tabs {
   max-width: 960px;
   margin-left: auto;
   margin-right: auto;
@@ -1916,15 +2031,15 @@ head:hover ~ .tab-container:before, head:hover ~ body .tab-container:before {
   width: 70%;
   display: table;
 }
-.tabs:after {
+.resource-tabs:after {
   content: " ";
   display: block;
   clear: both;
 }
-head:hover ~ .tabs, head:hover ~ body .tabs {
+head:hover ~ .resource-tabs, head:hover ~ body .resource-tabs {
   position: relative;
 }
-head:hover ~ .tabs:before, head:hover ~ body .tabs:before {
+head:hover ~ .resource-tabs:before, head:hover ~ body .resource-tabs:before {
   position: absolute;
   top: 0;
   left: 0;
@@ -1940,23 +2055,23 @@ head:hover ~ .tabs:before, head:hover ~ body .tabs:before {
   background-clip: content-box, border-box;
   background-position: left top;
 }
-.tabs li {
+.resource-tabs li {
   border-right: 4px solid #999999;
   display: table-cell;
   text-align: center;
 }
-.tabs a {
+.resource-tabs a {
   background: #e3e3e3;
   display: block;
   padding: 0.5em;
-  -moz-border-radius: 15px 15px 0 0;
-  -webkit-border-radius: 15px;
-  border-radius: 15px 15px 0 0;
+  -moz-border-radius: 7px 7px 0 0;
+  -webkit-border-radius: 7px;
+  border-radius: 7px 7px 0 0;
 }
-.tabs a:hover, .tabs a:focus {
+.resource-tabs a:hover, .resource-tabs a:focus {
   background: #989898;
 }
-.tabs a.active {
+.resource-tabs a.active {
   background: #b1b1b1;
   color: white;
   display: block;
@@ -2207,6 +2322,47 @@ head:hover ~ .tab-submenu-content:before, head:hover ~ body .tab-submenu-content
   margin-left: 83.33333%;
   margin-right: -100%;
   clear: none;
+}
+
+.activity-tabs {
+  position: absolute;
+  bottom: 0;
+  right: 10px;
+  width: 495px;
+}
+
+.tab-content {
+  display: none;
+}
+.tab-content.active {
+  display: block;
+}
+
+.activity-tabs .tab-link {
+  -moz-border-radius: 4px 4px 0 0;
+  -webkit-border-radius: 4px;
+  border-radius: 4px 4px 0 0;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 12.5%;
+  float: left;
+  padding-left: 1.5625%;
+  padding-right: 1.5625%;
+  background: rgba(255, 255, 255, 0.5);
+  color: #b1b1b1;
+  display: block;
+  font-family: "Open Sans Condensed", Times, "Times New Roman", serif;
+  margin-right: 0.4%;
+  padding: 1%;
+  text-align: center;
+  width: 60px;
+}
+.activity-tabs .tab-link:last-child {
+  margin-right: 0;
+}
+.activity-tabs .tab-link.active {
+  background: white;
 }
 
 .section {

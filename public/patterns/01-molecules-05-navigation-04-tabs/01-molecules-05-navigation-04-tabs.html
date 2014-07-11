@@ -5,9 +5,9 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width" />
 		
-		<link rel="stylesheet" href="../../css/style.css?1405024063" media="all" />
+		<link rel="stylesheet" href="../../css/style.css?1405119905" media="all" />
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-		<script src="../../js/jquery.leanModal.min.js"></script>
+	<script src="../../js/production.js"></script>
 		
 
 		<!-- Begin Pattern Lab (Required for Pattern Lab to run properly) -->
@@ -18,8 +18,8 @@
 		<meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
 		<meta http-equiv="pragma" content="no-cache" />
 		
-		<link rel="stylesheet" href="../../styleguide/css/styleguide.css?1405024063" media="all">
-		<link rel="stylesheet" href="../../styleguide/css/styleguide-specific.css?1405024063" media="all" />
+		<link rel="stylesheet" href="../../styleguide/css/styleguide.css?1405119905" media="all">
+		<link rel="stylesheet" href="../../styleguide/css/styleguide-specific.css?1405119905" media="all" />
 		
 
 		<!-- End Pattern Lab -->
@@ -27,7 +27,7 @@
 	</head>
 	<body class="body">	
 		<div class="tab-container">
-	<ul class="tabs">
+	<ul class="resource-tabs">
 		<li><a href="#" class="tab-link active" data-tab="tab-1">SIGHT WORDS</a></li>
 		<li><a href="#" class="tab-link" data-tab="tab-2">ONSETS & RHYMES</a></li>
 		<li><a href="#" class="tab-link" data-tab="tab-3">TRAINING TUTORIALS</a></li>
@@ -62,55 +62,6 @@
 
 </nav>
 
-
-<script>
-
-$(function() {
-
-  var theTabs = $('.tab-link');
-  var theTabSubMenus = $('.tab-submenu-list');
-  var theTabSubMenuLinks = $('.tab-submenu-link');
-  var theTabSubMenuContent = $('.tab-submenu-content');
-
-  $(theTabs).click(function(){
-    var theClickedTab = $(this);
-    var theClickedTabId = theClickedTab.attr('data-tab');  //.attr('data-tab');
-    selectTab(theClickedTab);
-    showSubNav(theClickedTabId);
-  });
-
-  $(theTabSubMenuLinks).click(function() {
-    var theClickedTabSubMenuLink = $(this);
-    var theClickedTabSubMenuLinkId = theClickedTabSubMenuLink.attr('data-tab');
-    selectTabSubMenuLink(theClickedTabSubMenuLink);
-    showTabSubMenuContent(theClickedTabSubMenuLinkId);
-
-  });
-
-  function selectTab(tab){            
-    $(theTabs).removeClass('active');
-    $(tab).addClass('active');
-  }
-
-  function showSubNav(tab) {
-    $(theTabSubMenus).removeClass('active');
-    $('#' + tab).addClass('active');
-  }
-
-  function selectTabSubMenuLink(tab) {
-    $(theTabSubMenuLinks).removeClass('active');
-    $(tab).addClass('active');
-  }
-
-  function showTabSubMenuContent(tab) {
-    $(theTabSubMenuContent).removeClass('active');
-    $('#' + tab).addClass('active');
-  }
-
-
-
-}); // end function
-</script>
 
 	<!--DO NOT REMOVE-->
 		
@@ -154,10 +105,10 @@ $(function() {
 			
 		}
 	</script>
-	<script id="pl-js-polyfill-insert-1405024063">
+	<script id="pl-js-polyfill-insert-1405119905">
 		(function() {
 			if (self != top) {
-				var cb = '1405024063';
+				var cb = '1405119905';
 				var js = [];
 				if (typeof document !== "undefined" && !("classList" in document.documentElement)) {
 					js.push("styleguide/js/vendor/classlist-polyfill.js");
@@ -166,10 +117,10 @@ $(function() {
 			}
 		})();
 	</script>
-	<script id="pl-js-insert-1405024063">
+	<script id="pl-js-insert-1405119905">
 		(function() {
 			if (self != top) {
-				var cb = '1405024063';
+				var cb = '1405119905';
 				var js = [ { "src": "styleguide/js/vendor/jwerty.js", "dep": [ "styleguide/js/postmessage.js", { "src": "data/annotations.js", "dep": [ "styleguide/js/annotations-pattern.js" ] }, "styleguide/js/code-pattern.js" ] } ];
 				scriptLoader.run(js,cb,'pl-js-insert');
 			}

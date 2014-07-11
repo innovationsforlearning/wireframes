@@ -5,9 +5,9 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width" />
 		
-		<link rel="stylesheet" href="../../css/style.css?1405024063" media="all" />
+		<link rel="stylesheet" href="../../css/style.css?1405119905" media="all" />
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-		<script src="../../js/jquery.leanModal.min.js"></script>
+	<script src="../../js/production.js"></script>
 		
 
 		<!-- Begin Pattern Lab (Required for Pattern Lab to run properly) -->
@@ -18,8 +18,8 @@
 		<meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
 		<meta http-equiv="pragma" content="no-cache" />
 		
-		<link rel="stylesheet" href="../../styleguide/css/styleguide.css?1405024063" media="all">
-		<link rel="stylesheet" href="../../styleguide/css/styleguide-specific.css?1405024063" media="all" />
+		<link rel="stylesheet" href="../../styleguide/css/styleguide.css?1405119905" media="all">
+		<link rel="stylesheet" href="../../styleguide/css/styleguide-specific.css?1405119905" media="all" />
 		
 
 		<!-- End Pattern Lab -->
@@ -94,11 +94,11 @@
 							<!-- Begin Footer -->
 <footer class="footer" role="contentinfo">
 
-    <div class="footer-header container ">
+    <div class="footer-header container">
       <h2 class="gamma footer-title">Resources</h2>
     </div>
       <div class="tab-container">
-      	<ul class="tabs">
+      	<ul class="resource-tabs">
       		<li><a href="#" class="tab-link active" data-tab="tab-1">SIGHT WORDS</a></li>
       		<li><a href="#" class="tab-link" data-tab="tab-2">ONSETS & RHYMES</a></li>
       		<li><a href="#" class="tab-link" data-tab="tab-3">TRAINING TUTORIALS</a></li>
@@ -133,55 +133,6 @@
 
       </nav>
 
-
-      <script>
-
-      $(function() {
-
-        var theTabs = $('.tab-link');
-        var theTabSubMenus = $('.tab-submenu-list');
-        var theTabSubMenuLinks = $('.tab-submenu-link');
-        var theTabSubMenuContent = $('.tab-submenu-content');
-
-        $(theTabs).click(function(){
-          var theClickedTab = $(this);
-          var theClickedTabId = theClickedTab.attr('data-tab');  //.attr('data-tab');
-          selectTab(theClickedTab);
-          showSubNav(theClickedTabId);
-        });
-
-        $(theTabSubMenuLinks).click(function() {
-          var theClickedTabSubMenuLink = $(this);
-          var theClickedTabSubMenuLinkId = theClickedTabSubMenuLink.attr('data-tab');
-          selectTabSubMenuLink(theClickedTabSubMenuLink);
-          showTabSubMenuContent(theClickedTabSubMenuLinkId);
-
-        });
-
-        function selectTab(tab){            
-          $(theTabs).removeClass('active');
-          $(tab).addClass('active');
-        }
-
-        function showSubNav(tab) {
-          $(theTabSubMenus).removeClass('active');
-          $('#' + tab).addClass('active');
-        }
-
-        function selectTabSubMenuLink(tab) {
-          $(theTabSubMenuLinks).removeClass('active');
-          $(tab).addClass('active');
-        }
-
-        function showTabSubMenuContent(tab) {
-          $(theTabSubMenuContent).removeClass('active');
-          $('#' + tab).addClass('active');
-        }
-
-
-
-      }); // end function
-      </script>
     <div class="footer-sub-tabs">
       <div class="tab-1-tabs">
         <div class="tab-submenu-content active" id="sub-tab-1"> 
@@ -632,11 +583,11 @@
 										&lt;!-- Begin Footer --&gt;
 &lt;footer class=&quot;footer&quot; role=&quot;contentinfo&quot;&gt;
 
-    &lt;div class=&quot;footer-header container &quot;&gt;
+    &lt;div class=&quot;footer-header container&quot;&gt;
       &lt;h2 class=&quot;gamma footer-title&quot;&gt;Resources&lt;/h2&gt;
     &lt;/div&gt;
       &lt;div class=&quot;tab-container&quot;&gt;
-      	&lt;ul class=&quot;tabs&quot;&gt;
+      	&lt;ul class=&quot;resource-tabs&quot;&gt;
       		&lt;li&gt;&lt;a href=&quot;#&quot; class=&quot;tab-link active&quot; data-tab=&quot;tab-1&quot;&gt;SIGHT WORDS&lt;/a&gt;&lt;/li&gt;
       		&lt;li&gt;&lt;a href=&quot;#&quot; class=&quot;tab-link&quot; data-tab=&quot;tab-2&quot;&gt;ONSETS &amp; RHYMES&lt;/a&gt;&lt;/li&gt;
       		&lt;li&gt;&lt;a href=&quot;#&quot; class=&quot;tab-link&quot; data-tab=&quot;tab-3&quot;&gt;TRAINING TUTORIALS&lt;/a&gt;&lt;/li&gt;
@@ -671,55 +622,6 @@
 
       &lt;/nav&gt;
 
-
-      &lt;script&gt;
-
-      $(function() {
-
-        var theTabs = $('.tab-link');
-        var theTabSubMenus = $('.tab-submenu-list');
-        var theTabSubMenuLinks = $('.tab-submenu-link');
-        var theTabSubMenuContent = $('.tab-submenu-content');
-
-        $(theTabs).click(function(){
-          var theClickedTab = $(this);
-          var theClickedTabId = theClickedTab.attr('data-tab');  //.attr('data-tab');
-          selectTab(theClickedTab);
-          showSubNav(theClickedTabId);
-        });
-
-        $(theTabSubMenuLinks).click(function() {
-          var theClickedTabSubMenuLink = $(this);
-          var theClickedTabSubMenuLinkId = theClickedTabSubMenuLink.attr('data-tab');
-          selectTabSubMenuLink(theClickedTabSubMenuLink);
-          showTabSubMenuContent(theClickedTabSubMenuLinkId);
-
-        });
-
-        function selectTab(tab){            
-          $(theTabs).removeClass('active');
-          $(tab).addClass('active');
-        }
-
-        function showSubNav(tab) {
-          $(theTabSubMenus).removeClass('active');
-          $('#' + tab).addClass('active');
-        }
-
-        function selectTabSubMenuLink(tab) {
-          $(theTabSubMenuLinks).removeClass('active');
-          $(tab).addClass('active');
-        }
-
-        function showTabSubMenuContent(tab) {
-          $(theTabSubMenuContent).removeClass('active');
-          $('#' + tab).addClass('active');
-        }
-
-
-
-      }); // end function
-      &lt;/script&gt;
     &lt;div class=&quot;footer-sub-tabs&quot;&gt;
       &lt;div class=&quot;tab-1-tabs&quot;&gt;
         &lt;div class=&quot;tab-submenu-content active&quot; id=&quot;sub-tab-1&quot;&gt; 
@@ -1253,11 +1155,10 @@
     </a>    <a href="#search-form" class="nav-toggle nav-toggle-search icon-search"><span class="is-vishidden">Search</span></a>
     <a href="#nav" class="nav-toggle nav-toggle-menu icon-menu"><span class="is-vishidden">Menu</span></a>
     <nav id="nav" class="nav">
-    	<ul class="nav-list">
-    		<li><a href="#" class="iconized"><i class="icon-home">Home</i></a></li>
-    		<li><a href="#" class="iconized"><i class="icon-lifebuoy">Immediate Assistance</i></a></li>
-    		<li><a href="#" class="iconized"><i class="icon-logout">Hi, John! Log Out</i></a></li>
-    	</ul>
+      <ul class="nav-list">
+        <li><a href="#" class="iconized"><i class="icon-connection"><img src="../../images/temp_pngs/icon-connection.png" alt="" width="36.5" >Session Active</i></a></li>
+        <li><a href="#" class="iconized"><i class="icon-assist"><img src="../../images/temp_pngs/icon-assist.png" alt="" width="36.5">Immediate Assistance</i></a></li>
+      </ul>
     </nav><!--end .nav-->
 
   </div>
@@ -1268,7 +1169,7 @@
 									<div class="sg-code-contains">
 										This pattern contains: 
 											<a href="../../patterns/00-atoms-04-images-00-logo/00-atoms-04-images-00-logo.html"><code>atoms-logo</code></a>
-											<a href="../../patterns/01-molecules-05-navigation-00-primary-nav/01-molecules-05-navigation-00-primary-nav.html"><code>molecules-primary-nav</code></a>
+											<a href="../../patterns/01-molecules-05-navigation-07-primary-nav-app/01-molecules-05-navigation-07-primary-nav-app.html"><code>molecules-primary-nav-app</code></a>
 											<a href="../../patterns/01-molecules-04-forms-00-search/01-molecules-04-forms-00-search.html"><code>molecules-search</code></a>
 									</div>
 								<h3 class="sg-code-head">HTML</h3>
@@ -1282,11 +1183,10 @@
     &lt;/a&gt;    &lt;a href=&quot;#search-form&quot; class=&quot;nav-toggle nav-toggle-search icon-search&quot;&gt;&lt;span class=&quot;is-vishidden&quot;&gt;Search&lt;/span&gt;&lt;/a&gt;
     &lt;a href=&quot;#nav&quot; class=&quot;nav-toggle nav-toggle-menu icon-menu&quot;&gt;&lt;span class=&quot;is-vishidden&quot;&gt;Menu&lt;/span&gt;&lt;/a&gt;
     &lt;nav id=&quot;nav&quot; class=&quot;nav&quot;&gt;
-    	&lt;ul class=&quot;nav-list&quot;&gt;
-    		&lt;li&gt;&lt;a href=&quot;#&quot; class=&quot;iconized&quot;&gt;&lt;i class=&quot;icon-home&quot;&gt;Home&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;
-    		&lt;li&gt;&lt;a href=&quot;#&quot; class=&quot;iconized&quot;&gt;&lt;i class=&quot;icon-lifebuoy&quot;&gt;Immediate Assistance&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;
-    		&lt;li&gt;&lt;a href=&quot;#&quot; class=&quot;iconized&quot;&gt;&lt;i class=&quot;icon-logout&quot;&gt;Hi, John! Log Out&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;
-    	&lt;/ul&gt;
+      &lt;ul class=&quot;nav-list&quot;&gt;
+        &lt;li&gt;&lt;a href=&quot;#&quot; class=&quot;iconized&quot;&gt;&lt;i class=&quot;icon-connection&quot;&gt;&lt;img src=&quot;../../images/temp_pngs/icon-connection.png&quot; alt=&quot;&quot; width=&quot;36.5&quot; &gt;Session Active&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;#&quot; class=&quot;iconized&quot;&gt;&lt;i class=&quot;icon-assist&quot;&gt;&lt;img src=&quot;../../images/temp_pngs/icon-assist.png&quot; alt=&quot;&quot; width=&quot;36.5&quot;&gt;Immediate Assistance&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
     &lt;/nav&gt;&lt;!--end .nav--&gt;
 
   &lt;/div&gt;
@@ -1343,10 +1243,10 @@
 			
 		}
 	</script>
-	<script id="pl-js-polyfill-insert-1405024063">
+	<script id="pl-js-polyfill-insert-1405119905">
 		(function() {
 			if (self != top) {
-				var cb = '1405024063';
+				var cb = '1405119905';
 				var js = [];
 				if (typeof document !== "undefined" && !("classList" in document.documentElement)) {
 					js.push("styleguide/js/vendor/classlist-polyfill.js");
@@ -1355,10 +1255,10 @@
 			}
 		})();
 	</script>
-	<script id="pl-js-insert-1405024063">
+	<script id="pl-js-insert-1405119905">
 		(function() {
 			if (self != top) {
-				var cb = '1405024063';
+				var cb = '1405119905';
 				var js = [ { "src": "styleguide/js/vendor/jwerty.js", "dep": [ "styleguide/js/postmessage.js", { "src": "data/annotations.js", "dep": [ "styleguide/js/annotations-pattern.js" ] }, "styleguide/js/code-pattern.js" ] } ];
 				scriptLoader.run(js,cb,'pl-js-insert');
 			}

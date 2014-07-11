@@ -1,0 +1,74 @@
+.activity-main {
+  @include span(11 of 12 no-gutters);
+  @include clearfix;
+
+  // padding: 2.2%;
+}
+
+.activity-content-header {
+  @include clearfix;
+  background: $wf-gray-light;
+  padding: 2% 0;
+  position: relative;
+  h1 {
+    @include full;
+  }
+  .next-activity {
+    @include span(2 of 11 last)
+  }
+}
+
+
+.activity-instructions {
+  @include span(5 of 11);
+  font-size: 11px;
+}
+
+// .flashcard-game {
+
+// }
+
+// .flashcard-inputs {
+//   @include clearfix;
+//   @include span(8 of 11)
+// }
+
+// .flashcard-yes-no {
+//   @include span(3 of 11 last);
+// }
+
+.story-block {
+  
+  padding: 2% 0;
+  .story-block-title {
+    @include full;
+    @extend .delta;
+    padding-bottom: 1%;
+  }
+  .gallery {
+    > .column {
+      @include gallery(2 of 10);
+    }
+  }
+  figure {
+    position: relative;
+    &:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 10px;
+      height: 10px;
+      background: $white;
+    }
+  }
+  figcaption {
+    font-family: $font-secondary;
+    font-style: normal;
+    font-size: 15px;
+  }
+  img {
+
+
+  }
+}

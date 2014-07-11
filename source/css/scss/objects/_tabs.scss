@@ -4,7 +4,7 @@
   @include break;
 }
 
-.tabs {
+.resource-tabs {
   @include container($container);
   margin-top: -2%;
   float: right;
@@ -23,7 +23,7 @@
     background: $wf-gray-light;
     display: block;
     padding: $pad-half;
-    @include border-radius(15px 15px 0 0);
+    @include border-radius(7px 7px 0 0);
 
     &:hover, 
     &:focus {
@@ -146,4 +146,41 @@
     @include gallery(2 of 12)
   }
 
+}
+
+
+
+// ----------- ACTIVITY PAGE TABS --------------------
+
+.activity-tabs {
+  position: absolute;
+  bottom: 0;
+  right: 10px;
+  width: 495px;
+}
+
+.tab-content {
+  display: none;
+  &.active {
+    display: block;
+  }
+}
+
+.activity-tabs .tab-link {
+  @include border-radius(4px 4px 0 0);
+  @include span(1 of 8);
+  background: $wf-gray-med-light;
+  color: $wf-gray-med;
+  display: block;
+  font-family: $font-secondary;
+  margin-right: 0.4%;
+  padding: 1%;
+  text-align: center;
+  width: 60px;
+  &:last-child {
+    margin-right: 0;
+  }
+  &.active {
+    background: $white;
+  }
 }

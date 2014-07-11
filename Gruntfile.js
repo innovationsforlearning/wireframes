@@ -8,6 +8,15 @@ module.exports = function(grunt) {
           command: "php core/builder.php -gp"
       }
     },
+
+    concat: {
+      dist: {
+        src: [
+          'source/js/*.js'
+        ],
+        dest: 'public/js/production.js'
+      }
+    },
     
     sass: {
       dist: {
@@ -42,6 +51,14 @@ module.exports = function(grunt) {
           spawn: false, 
           livereload: true
         }
+      },
+      scripts: {
+        files: ['source/js/*.js'],
+        tasks: ['concat'],
+        options: {
+          spawn: false,
+          livereload: true
+        },
       }
     }
   });
@@ -51,10 +68,11 @@ module.exports = function(grunt) {
   // Plugins
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-shell');
+  grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-imagemin');
   grunt.loadNpmTasks('grunt-contrib-sass');
 
   // Tasks
   grunt.registerTask('default', ['build']);
-  grunt.registerTask('build', ['shell:patternlab', 'sass']);
+  grunt.registerTask('build', ['shell:patternlab', 'sass', 'concat']);
 };

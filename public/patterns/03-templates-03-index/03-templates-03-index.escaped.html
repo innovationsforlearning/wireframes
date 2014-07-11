@@ -16,9 +16,9 @@
   &lt;/div&gt;
 	
 &lt;/header&gt;
-&lt;!-- End .header --&gt;&lt;div class=&quot;page&quot; id=&quot;page&quot;&gt;
+&lt;!-- End .header --&gt;&lt;div class=&quot;page&quot; id=&quot;homepage&quot;&gt;
   
-  &lt;div class=&quot;main&quot; role=&quot;main&quot;&gt;
+  &lt;div class=&quot;homepage-main&quot; role=&quot;main&quot;&gt;
     
 
         &lt;nav class=&quot;hero-nav-primary&quot;&gt;
@@ -115,11 +115,11 @@ $(function() {
   &lt;!-- Begin Footer --&gt;
   &lt;footer class=&quot;footer&quot; role=&quot;contentinfo&quot;&gt;
 
-      &lt;div class=&quot;footer-header container &quot;&gt;
+      &lt;div class=&quot;footer-header container&quot;&gt;
         &lt;h2 class=&quot;gamma footer-title&quot;&gt;Resources&lt;/h2&gt;
       &lt;/div&gt;
       &lt;div class=&quot;tab-container&quot;&gt;
-      	&lt;ul class=&quot;tabs&quot;&gt;
+      	&lt;ul class=&quot;resource-tabs&quot;&gt;
       		&lt;li&gt;&lt;a href=&quot;#&quot; class=&quot;tab-link active&quot; data-tab=&quot;tab-1&quot;&gt;SIGHT WORDS&lt;/a&gt;&lt;/li&gt;
       		&lt;li&gt;&lt;a href=&quot;#&quot; class=&quot;tab-link&quot; data-tab=&quot;tab-2&quot;&gt;ONSETS &amp; RHYMES&lt;/a&gt;&lt;/li&gt;
       		&lt;li&gt;&lt;a href=&quot;#&quot; class=&quot;tab-link&quot; data-tab=&quot;tab-3&quot;&gt;TRAINING TUTORIALS&lt;/a&gt;&lt;/li&gt;
@@ -154,55 +154,6 @@ $(function() {
 
       &lt;/nav&gt;
 
-
-      &lt;script&gt;
-
-      $(function() {
-
-        var theTabs = $('.tab-link');
-        var theTabSubMenus = $('.tab-submenu-list');
-        var theTabSubMenuLinks = $('.tab-submenu-link');
-        var theTabSubMenuContent = $('.tab-submenu-content');
-
-        $(theTabs).click(function(){
-          var theClickedTab = $(this);
-          var theClickedTabId = theClickedTab.attr('data-tab');  //.attr('data-tab');
-          selectTab(theClickedTab);
-          showSubNav(theClickedTabId);
-        });
-
-        $(theTabSubMenuLinks).click(function() {
-          var theClickedTabSubMenuLink = $(this);
-          var theClickedTabSubMenuLinkId = theClickedTabSubMenuLink.attr('data-tab');
-          selectTabSubMenuLink(theClickedTabSubMenuLink);
-          showTabSubMenuContent(theClickedTabSubMenuLinkId);
-
-        });
-
-        function selectTab(tab){            
-          $(theTabs).removeClass('active');
-          $(tab).addClass('active');
-        }
-
-        function showSubNav(tab) {
-          $(theTabSubMenus).removeClass('active');
-          $('#' + tab).addClass('active');
-        }
-
-        function selectTabSubMenuLink(tab) {
-          $(theTabSubMenuLinks).removeClass('active');
-          $(tab).addClass('active');
-        }
-
-        function showTabSubMenuContent(tab) {
-          $(theTabSubMenuContent).removeClass('active');
-          $('#' + tab).addClass('active');
-        }
-
-
-
-      }); // end function
-      &lt;/script&gt;
       &lt;div class=&quot;footer-sub-tabs&quot;&gt;
         &lt;div class=&quot;tab-1-tabs&quot;&gt;
           &lt;div class=&quot;tab-submenu-content active&quot; id=&quot;sub-tab-1&quot;&gt; 

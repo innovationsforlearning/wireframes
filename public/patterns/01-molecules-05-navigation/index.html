@@ -5,9 +5,9 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width" />
 		
-		<link rel="stylesheet" href="../../css/style.css?1405024063" media="all" />
+		<link rel="stylesheet" href="../../css/style.css?1405119905" media="all" />
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-		<script src="../../js/jquery.leanModal.min.js"></script>
+	<script src="../../js/production.js"></script>
 		
 
 		<!-- Begin Pattern Lab (Required for Pattern Lab to run properly) -->
@@ -18,8 +18,8 @@
 		<meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
 		<meta http-equiv="pragma" content="no-cache" />
 		
-		<link rel="stylesheet" href="../../styleguide/css/styleguide.css?1405024063" media="all">
-		<link rel="stylesheet" href="../../styleguide/css/styleguide-specific.css?1405024063" media="all" />
+		<link rel="stylesheet" href="../../styleguide/css/styleguide.css?1405119905" media="all">
+		<link rel="stylesheet" href="../../styleguide/css/styleguide-specific.css?1405119905" media="all" />
 		
 
 		<!-- End Pattern Lab -->
@@ -144,7 +144,7 @@
 						<h2 class="sg-pattern-head" ><a href="../../patterns/01-molecules-05-navigation-04-tabs/01-molecules-05-navigation-04-tabs.html" class="patternLink" data-patternpartial="molecules-tabs">Tabs</a></h2>
 						<div class="sg-pattern-body">
 							<div class="tab-container">
-	<ul class="tabs">
+	<ul class="resource-tabs">
 		<li><a href="#" class="tab-link active" data-tab="tab-1">SIGHT WORDS</a></li>
 		<li><a href="#" class="tab-link" data-tab="tab-2">ONSETS & RHYMES</a></li>
 		<li><a href="#" class="tab-link" data-tab="tab-3">TRAINING TUTORIALS</a></li>
@@ -180,61 +180,12 @@
 </nav>
 
 
-<script>
-
-$(function() {
-
-  var theTabs = $('.tab-link');
-  var theTabSubMenus = $('.tab-submenu-list');
-  var theTabSubMenuLinks = $('.tab-submenu-link');
-  var theTabSubMenuContent = $('.tab-submenu-content');
-
-  $(theTabs).click(function(){
-    var theClickedTab = $(this);
-    var theClickedTabId = theClickedTab.attr('data-tab');  //.attr('data-tab');
-    selectTab(theClickedTab);
-    showSubNav(theClickedTabId);
-  });
-
-  $(theTabSubMenuLinks).click(function() {
-    var theClickedTabSubMenuLink = $(this);
-    var theClickedTabSubMenuLinkId = theClickedTabSubMenuLink.attr('data-tab');
-    selectTabSubMenuLink(theClickedTabSubMenuLink);
-    showTabSubMenuContent(theClickedTabSubMenuLinkId);
-
-  });
-
-  function selectTab(tab){            
-    $(theTabs).removeClass('active');
-    $(tab).addClass('active');
-  }
-
-  function showSubNav(tab) {
-    $(theTabSubMenus).removeClass('active');
-    $('#' + tab).addClass('active');
-  }
-
-  function selectTabSubMenuLink(tab) {
-    $(theTabSubMenuLinks).removeClass('active');
-    $(tab).addClass('active');
-  }
-
-  function showTabSubMenuContent(tab) {
-    $(theTabSubMenuContent).removeClass('active');
-    $('#' + tab).addClass('active');
-  }
-
-
-
-}); // end function
-</script>
-
 							<div class="sg-code" style="display: none">
 								<h3 class="sg-code-head">HTML</h3>
 								<pre class="sg-code-html">
 									<code>
 										&lt;div class=&quot;tab-container&quot;&gt;
-	&lt;ul class=&quot;tabs&quot;&gt;
+	&lt;ul class=&quot;resource-tabs&quot;&gt;
 		&lt;li&gt;&lt;a href=&quot;#&quot; class=&quot;tab-link active&quot; data-tab=&quot;tab-1&quot;&gt;SIGHT WORDS&lt;/a&gt;&lt;/li&gt;
 		&lt;li&gt;&lt;a href=&quot;#&quot; class=&quot;tab-link&quot; data-tab=&quot;tab-2&quot;&gt;ONSETS &amp; RHYMES&lt;/a&gt;&lt;/li&gt;
 		&lt;li&gt;&lt;a href=&quot;#&quot; class=&quot;tab-link&quot; data-tab=&quot;tab-3&quot;&gt;TRAINING TUTORIALS&lt;/a&gt;&lt;/li&gt;
@@ -269,55 +220,6 @@ $(function() {
 
 &lt;/nav&gt;
 
-
-&lt;script&gt;
-
-$(function() {
-
-  var theTabs = $('.tab-link');
-  var theTabSubMenus = $('.tab-submenu-list');
-  var theTabSubMenuLinks = $('.tab-submenu-link');
-  var theTabSubMenuContent = $('.tab-submenu-content');
-
-  $(theTabs).click(function(){
-    var theClickedTab = $(this);
-    var theClickedTabId = theClickedTab.attr('data-tab');  //.attr('data-tab');
-    selectTab(theClickedTab);
-    showSubNav(theClickedTabId);
-  });
-
-  $(theTabSubMenuLinks).click(function() {
-    var theClickedTabSubMenuLink = $(this);
-    var theClickedTabSubMenuLinkId = theClickedTabSubMenuLink.attr('data-tab');
-    selectTabSubMenuLink(theClickedTabSubMenuLink);
-    showTabSubMenuContent(theClickedTabSubMenuLinkId);
-
-  });
-
-  function selectTab(tab){            
-    $(theTabs).removeClass('active');
-    $(tab).addClass('active');
-  }
-
-  function showSubNav(tab) {
-    $(theTabSubMenus).removeClass('active');
-    $('#' + tab).addClass('active');
-  }
-
-  function selectTabSubMenuLink(tab) {
-    $(theTabSubMenuLinks).removeClass('active');
-    $(tab).addClass('active');
-  }
-
-  function showTabSubMenuContent(tab) {
-    $(theTabSubMenuContent).removeClass('active');
-    $('#' + tab).addClass('active');
-  }
-
-
-
-}); // end function
-&lt;/script&gt;
 
 									</code>
 								</pre>
@@ -531,8 +433,8 @@ $(function() {
 						<div class="sg-pattern-body">
 							<nav id="nav" class="nav">
   <ul class="nav-list">
-    <li><a href="#" class="iconized"><i class="icon-home"><img src="../../images/temp_pngs/icon-active.png" alt="" >Session Active</i></a></li>
-    <li><a href="#" class="iconized"><i class="icon-lifebuoy"><img src="../../images/temp_pngs/icon-assist.png" alt="" width="36.5">Immediate Assistance</i></a></li>
+    <li><a href="#" class="iconized"><i class="icon-connection"><img src="../../images/temp_pngs/icon-connection.png" alt="" width="36.5" >Session Active</i></a></li>
+    <li><a href="#" class="iconized"><i class="icon-assist"><img src="../../images/temp_pngs/icon-assist.png" alt="" width="36.5">Immediate Assistance</i></a></li>
   </ul>
 </nav><!--end .nav-->
 
@@ -542,8 +444,8 @@ $(function() {
 									<code>
 										&lt;nav id=&quot;nav&quot; class=&quot;nav&quot;&gt;
   &lt;ul class=&quot;nav-list&quot;&gt;
-    &lt;li&gt;&lt;a href=&quot;#&quot; class=&quot;iconized&quot;&gt;&lt;i class=&quot;icon-home&quot;&gt;&lt;img src=&quot;../../images/temp_pngs/icon-active.png&quot; alt=&quot;&quot; &gt;Session Active&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;#&quot; class=&quot;iconized&quot;&gt;&lt;i class=&quot;icon-lifebuoy&quot;&gt;&lt;img src=&quot;../../images/temp_pngs/icon-assist.png&quot; alt=&quot;&quot; width=&quot;36.5&quot;&gt;Immediate Assistance&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#&quot; class=&quot;iconized&quot;&gt;&lt;i class=&quot;icon-connection&quot;&gt;&lt;img src=&quot;../../images/temp_pngs/icon-connection.png&quot; alt=&quot;&quot; width=&quot;36.5&quot; &gt;Session Active&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#&quot; class=&quot;iconized&quot;&gt;&lt;i class=&quot;icon-assist&quot;&gt;&lt;img src=&quot;../../images/temp_pngs/icon-assist.png&quot; alt=&quot;&quot; width=&quot;36.5&quot;&gt;Immediate Assistance&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;
   &lt;/ul&gt;
 &lt;/nav&gt;&lt;!--end .nav--&gt;
 
@@ -597,10 +499,10 @@ $(function() {
 			
 		}
 	</script>
-	<script id="pl-js-polyfill-insert-1405024063">
+	<script id="pl-js-polyfill-insert-1405119905">
 		(function() {
 			if (self != top) {
-				var cb = '1405024063';
+				var cb = '1405119905';
 				var js = [];
 				if (typeof document !== "undefined" && !("classList" in document.documentElement)) {
 					js.push("styleguide/js/vendor/classlist-polyfill.js");
@@ -609,10 +511,10 @@ $(function() {
 			}
 		})();
 	</script>
-	<script id="pl-js-insert-1405024063">
+	<script id="pl-js-insert-1405119905">
 		(function() {
 			if (self != top) {
-				var cb = '1405024063';
+				var cb = '1405119905';
 				var js = [ { "src": "styleguide/js/vendor/jwerty.js", "dep": [ "styleguide/js/postmessage.js", { "src": "data/annotations.js", "dep": [ "styleguide/js/annotations-pattern.js" ] }, "styleguide/js/code-pattern.js" ] } ];
 				scriptLoader.run(js,cb,'pl-js-insert');
 			}
