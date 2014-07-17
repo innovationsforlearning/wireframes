@@ -10,11 +10,25 @@ module.exports = function(grunt) {
     },
 
     concat: {
+      options: {
+        separator: ';',
+      },
       dist: {
         src: [
-          'source/js/*.js'
+          'source/js/init.js',
+          'source/js/modernizr.js',
+          'source/js/fitvids.js', 
+          'source/js/jquery.leanModal.min.js',
+          'source/js/all.js'
         ],
         dest: 'public/js/production.js'
+      }
+    },
+
+    uglify: {
+      build: {
+        src: 'public/js/production.js',
+        dest: 'public/js/production.min.js'
       }
     },
     
@@ -54,7 +68,7 @@ module.exports = function(grunt) {
       },
       scripts: {
         files: ['source/js/*.js'],
-        tasks: ['concat'],
+        tasks: ['concat', 'uglify'],
         options: {
           spawn: false,
           livereload: true
@@ -69,10 +83,11 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-shell');
   grunt.loadNpmTasks('grunt-contrib-concat');
+  grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-imagemin');
   grunt.loadNpmTasks('grunt-contrib-sass');
 
   // Tasks
   grunt.registerTask('default', ['build']);
-  grunt.registerTask('build', ['shell:patternlab', 'sass', 'concat']);
+  grunt.registerTask('build', ['shell:patternlab', 'sass', 'concat', 'uglify']);
 };

@@ -162,10 +162,29 @@
 
 .hero-nav-primary {
 	@include container($container);
+	background: $white;
 }
 
 .hero-nav-secondary {
 	background: $wf-gray-light;
+}
+
+.icon-link {
+	&.large i {
+		font-size: 200px;
+		&.icon-tutor {
+			color: #8899d4;
+		}
+		&.icon-calendar {
+			color: #e457ad;
+		}
+		&.icon-pencil {
+			color: #feb457;
+		}
+	}
+	&.medium i {
+		font-size: 150px;
+	}
 }
 
 

@@ -1,0 +1,45 @@
+{{> organisms-header-app }}
+<div class="page" id="stories">
+  {{> organisms-notes-tab }}
+  
+  <div class="activity-container">
+    {{> organisms-sidebar }}
+    <section class="activity-main">
+      <header class="activity-content-header">
+        <h1 class="beta">Stories</h1>
+        {{! <div class="next-activity">next activity</div> }}
+        <div class="activity-instructions">
+          <h2 class="delta">Bobby's teacher suggests you read stories from Group D.</h2>
+          {{! more detail, if needed }}
+   
+        </div>
+
+        <div class="activity-tabs">
+         {{!  <nav class="tab-links"> }}
+            <a href="#" class="tab-link active" data-tab="stories-a">A</a>
+            <a href="#" class="tab-link" data-tab="stories-b">B</a>
+            <a href="#" class="tab-link" data-tab="stories-c">C</a>
+            <a href="#" class="tab-link" data-tab="stories-d">D</a>
+            <a href="#" class="tab-link" data-tab="stories-e">E</a>
+            <a href="#" class="tab-link" data-tab="stories-fg">FG</a>
+            <a href="#" class="tab-link" data-tab="stories-hi">HI</a>
+            <a href="#" class="tab-link" data-tab="stories-jlk">JLK</a>
+          {{! </nav> }}
+          
+        </div>
+      </header>
+      
+      {{> organisms-story-list }}
+
+
+
+
+
+
+
+    </section> {{! /activity-main}}
+
+
+  </div><!--End role=main-->
+  {{> organisms-footer }}
+</div>

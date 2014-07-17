@@ -14,6 +14,10 @@
 
 //Footer Nav
 
+.footer-header {
+	@extend .container;
+	margin-bottom: -1.4%;
+}
 .footer-title {
 	color: $white;
 	display: block;
@@ -39,7 +43,10 @@
 }
 
 .copyright {
-
+	color: $white;
+	line-height: 0;
+	text-align: center;
+	display: block;
 	@media all and (min-width: $bp-med) {
 		text-align: center;
 	}
@@ -54,5 +61,5 @@
 }
 
 .footer-sub-tabs {
-	background: $wf-gray-light;
+	background: $wf-gray-med;
 }

@@ -5,3 +5,4 @@
 - move footer jQuery into its own file
 - refactor padding on headings
 - style checkboxes
+- make the notes tab work properly

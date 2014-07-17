@@ -1,0 +1,34 @@
+{{> organisms-header-app }}
+<div class="page" id="wordsort">
+  
+  <div class="activity-container">
+    {{> organisms-sidebar }}
+    <section class="activity-main">
+      <header class="activity-content-header">
+        <h1 class="beta">Word Sort</h1>
+        <div class="next-activity">next activity</div>
+        <div class="activity-instructions">
+          <h2 class="delta">Student must sort words according to their word families.</h2>
+          {{! more detail, if needed }}
+          <ol class="epsilon">
+            <li>In the text field, type one of the words shown above the three colored boxes and pres ENTER to send.</li>
+            <li>Click on the box your student selects. The word will jump into the colored box.</li>
+            <li>If the wrong box is selected, click on the word inside the box to remove it.</li>
+            <li>Repeat until all words are placed in colored boxes.</li>
+          </ol>
+        </div>
+
+      </header>
+      
+      {{> organisms-wordsort-content }}
+
+    
+
+    </section> {{! /activity-main}}
+      
+
+      
+
+  </div><!--End role=main-->
+  {{> organisms-footer }}
+</div>

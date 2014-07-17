@@ -15,16 +15,20 @@
     border-right: 4px solid $wf-gray-dark;
     display: table-cell;
     text-align: center;
+    
 
     
   }
 
   a {
-    background: $wf-gray-light;
+    background: $wf-gray-dark;
     display: block;
     padding: $pad-half;
     @include border-radius(7px 7px 0 0);
-
+    border-top: 1px solid $wf-gray-med-light;
+    border-right: 1px solid $wf-gray-med-light;
+    border-left: 1px solid $wf-gray-med-light;
+    color: $wf-gray-light;
     &:hover, 
     &:focus {
       background: $wf-gray-med-dark;
@@ -34,16 +38,20 @@
       background: $wf-gray-med;
       color: $white;
       display: block;
+      border-color: transparent;
     }
   }
 }
 
 .tab-submenu {
   background: $wf-gray-med;
+  border-bottom: 1px solid $wf-gray-med-light;
+  padding-top: 0.5%;
+  display: relative;
+  z-index: 5;
 }
 
-.tab-submenu-list {
-   
+.tab-submenu-list {   
   display: none;
 
   &.active {
@@ -57,6 +65,7 @@
     display: table-cell;
     text-align: center;
 
+
     &:last-child {
       border-right: 0;
     }
@@ -64,7 +73,8 @@
     a {
       display: block;
       background: inherit;
-      padding: $pad;
+      padding: 0.6em;
+      color: $wf-gray-light;
     }
   }
 }
@@ -78,42 +88,32 @@
   background: $wf-gray-med;
 }
 
-// .tab-submenu-list {
-//   display: none; 
 
-//   &.active {
-//     display: block;
-//     @include container($container);
-//   }
-// }
-
-.tab-submenu-link.active {
-  position: relative;
-  &:before,
-  &:after {
-    content:"";
-    display:block;
-    width:1em; /* Must match our magic number... */
-    height:1em; /* ...our notch will end up being half this size. We define it in ems to scale it up with the text size. */
-    position:absolute;
-    bottom:0;
-    left:50%;
-    margin-left:-.5em; /* Half of our magic number. */
-  }
-  &:before {
-    background: $wf-gray-light;
-  }
-  &:after {
-    width:0;
-    height:0;
-    border:.5em solid $wf-gray-med; /* Half of our magic number and same colours as our nav’s background. */
-    border-bottom-color:transparent;
+.tab-submenu-link {
+  
+  &.active {
+    position: relative;
+    @include border-radius(8px 8px 0 0);
+    border-top: 1px solid $wf-gray-med-light;
+    border-right: 1px solid $wf-gray-med-light;
+    border-left: 1px solid $wf-gray-med-light;
+    color: $white;
+    &:after {
+      content: "";
+      border-bottom: 4px solid #b1b1b1;
+      z-index: 10;
+      position: absolute;
+      height: 2px;
+      bottom: -2px;
+      left: 0;
+      width: 100%;
+    }
   }
 }
 
 .tab-submenu-content {
   @include container($container);
-  background: $wf-gray-light;
+  background: $wf-gray-med;
   display: none;
   overflow: auto;
   padding: 1% 0;
@@ -157,6 +157,10 @@
   bottom: 0;
   right: 10px;
   width: 495px;
+  &.tabs-under {
+    left: 10px; 
+    right: auto;
+  }
 }
 
 .tab-content {

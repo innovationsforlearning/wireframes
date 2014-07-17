@@ -1,0 +1,35 @@
+{{> organisms-header-app }}
+<div class="page" id="wordsort">
+  
+  <div class="activity-container">
+    {{> organisms-sidebar }}
+    <section class="activity-main">
+      <header class="activity-content-header">
+        <h1 class="beta">Mystery Word</h1>
+        <div class="next-activity">next activity</div>
+        <div class="activity-instructions">
+          <h2 class="delta">Object: To guess the mystery word.</h2>
+          {{! more detail, if needed }}
+          <ol class="epsilon">
+            <li>Think of a word with a maximum of seven letters. Click on the corresponding number.</li>
+            <li>Ask the student to guess one letter at a time to form the selected word.</li>
+            <li>As the student guesses, click on each letter to highlight it.</li>
+            <li>If the student guesses correctly, type the letter in the corresponding space(s).</li>
+            <li>If the student guesses incorrectly, remove a star. </li>
+          </ol>
+        </div>
+
+      </header>
+      
+      {{> organisms-mysteryword-content }}
+
+    
+
+    </section> {{! /activity-main}}
+      
+
+      
+
+  </div><!--End role=main-->
+  {{> organisms-footer }}
+</div>

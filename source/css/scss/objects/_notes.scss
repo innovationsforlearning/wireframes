@@ -1,0 +1,85 @@
+.notes-tab {
+  background: $wf-gray-dark;
+  @include border-radius(50% 0 0 50%);
+  width: 35px;
+  height: 35px;
+  position: fixed;
+  top: 200px;
+  right: 0;
+  i {
+
+  }
+  img {
+    width: 15px;
+    height: auto;
+    margin-left: 12px; // remove this when icon is created
+    vertical-align: middle;
+  }
+}
+
+.notepad {
+  min-height: 500px;
+  width: 0px;
+  position: fixed;
+  top: 200px;
+  right: 0;
+  h1 {
+    background: $wf-gray-light;
+    color: $wf-gray-dark;
+    padding: 2%;
+  }
+  .note-body {
+    width: 270px;
+    margin-left: 70px;
+    background: $white;
+  }
+}
+
+// test
+
+#note-tab {
+  background: $wf-gray-dark;
+  @include border-radius(50% 0 0 50%);
+  width: 35px;
+  height: 35px;
+
+  position:fixed;
+  right:0px;
+  top:100px;
+  display:block;
+  cursor:pointer;
+  z-index: 25;
+  img {
+    width: 15px;
+    height: auto;
+    margin-left: 12px; // remove this when icon is created
+    vertical-align: middle;
+  }
+}
+#note-panel {
+  position:fixed;
+  right:0px;
+  top:100px;
+  background-color:$white;
+  height:500px;
+  width:0;
+  z-index: 20;
+  @include box-shadow(-3px 0px 5px 0px rgba(50, 50, 50, 0.75));
+  .note-content {
+    width:350px;
+    margin: 10px auto;
+    font-size: 15px; // todo change this
+  }
+  .note-header {
+    font-family: $font-secondary;
+    font-weight: 600;
+    height: 35px;
+    background: $wf-gray-light;
+    color: $wf-gray-dark;
+    padding: 2%;
+  }
+}
+#panel .content {
+    
+
+}

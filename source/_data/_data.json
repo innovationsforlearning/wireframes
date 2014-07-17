@@ -26,7 +26,9 @@
 	},
 	"icon" : {
 		"class" : {
-			"calendar" : "icon-calendar"
+			"calendar" : "icon-calendar", 
+			"pencil" : "icon-pencil", 
+			"tutor" : "icon-tutor"
 			}
 		},
 

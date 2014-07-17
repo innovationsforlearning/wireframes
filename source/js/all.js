@@ -40,9 +40,7 @@ $(function() {
     selectTabSubMenuLink(theClickedTabSubMenuLink);
     showTabSubMenuContent(theClickedTabSubMenuLinkId);
 
-  });
-
-  
+  });  
 
   function selectResourceTab(tab){            
     $('.resource-tabs .tab-link').removeClass('active');
@@ -64,6 +62,36 @@ $(function() {
     $('#' + tab).addClass('active');
   }
 
+// CONNECTION MODAL --------------------------------
+
+  $('a[rel*=leanModal]').leanModal({  
+    overlay: 0.9, 
+    closeButton: ".modal_close" 
+  });
+
+
+// THE NOTEPAD TAB --------------------------------
+
+    $('#note-tab').click(function(event) {
+        var panel = $('#note-panel');
+        if (panel.hasClass('open')) {
+            panel.removeClass('open');
+            $('.note-content').fadeOut('slow', function() {
+                $('#note-panel').stop().animate({
+                    width: '0',
+                    opacity: 0.0
+                }, 500)
+            })
+        } else {
+            panel.addClass('open');
+            $('#note-panel').stop().animate({
+                width: '400',
+                opacity: 1
+            }, 500, function() {
+                $('.note-content').fadeIn('fast');
+            });
+        }
+    });  
 
 
 

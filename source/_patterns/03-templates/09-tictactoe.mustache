@@ -1,0 +1,34 @@
+{{> organisms-header-app }}
+<div class="page" id="wordsort">
+  
+  <div class="activity-container">
+    {{> organisms-sidebar }}
+    <section class="activity-main">
+      <header class="activity-content-header">
+        <h1 class="beta">Tic Tac Toe</h1>
+        <div class="next-activity">next activity</div>
+        <div class="activity-instructions">
+          <h2 class="delta">Student must sort words according to their word families.</h2>
+          {{! more detail, if needed }}
+          <ol class="epsilon">
+            <li>Student is player X, tutor is player O. Ask student to slelect a box and read the word/number aloud.</li>
+            <li>If they are correct, click the selected box once to place an X.</li>
+            <li>Tutor takes a turn. Click twice to place an O.</li>
+            <li>Click three times to clear a box. Click RESET to start a new game.</li>
+          </ol>
+        </div>
+
+      </header>
+      
+      {{> organisms-tictactoe-content }}
+
+    
+
+    </section> {{! /activity-main}}
+      
+
+      
+
+  </div><!--End role=main-->
+  {{> organisms-footer }}
+</div>

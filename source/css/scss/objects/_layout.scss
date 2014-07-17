@@ -13,6 +13,14 @@
 	@include container($container);
 }
 
+.page {
+	background: $wf-gray-med;
+	position: relative;
+	&.white { 
+		background: $white;
+	}
+}
+
 // TODO: YOU CAN PRETTY MUCH DELETE ALL THIS ONCE YOU'RE DONE WITH THE PATTERNLAB 
 
 /*------------------------------------*\
